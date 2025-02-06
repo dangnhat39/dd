@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Table : Bảng
+   tr : biểu thị hàng
+   td : cột 
+   *** các thuộc tính của bảng(attribute)
+   border: đường viền của bảng
+   cellpadding: là khoảng cách từ viền của cột đến nội dung
+   cellspacing:khoảng cách từ viền của bảng đến viền của cột
+   rowspan đề gộp các hàng -->
+  <table border="1" cellpadding="15" cellspacing="1">
+    <caption>QUản Lý Sinh viên</caption>
+    <thead>
+      <!-- phần đầu của bảng -->
+      <tr>
+        <th bgcolor="pink">Stt</th>
+        <th>Tên</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Phần thân của bảng -->
+      <tr>
+        <td>1</td>
+        <td>Nguyễn Văn Minh</td>
+      </tr>
+      <tr>
+        <td align="center" rowspan="2">2</td>
+        <td>Toly lê2</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <!-- Phần cuối của bảng -->
+       <tr>
+        <td colspan="2">tổng 2 cái bằng=  2</td>
+       </tr>
+       <form action="./home.html"><input type="text"></form>
+    </tfoot>
+  </table>
+</body>
+
+</html>
