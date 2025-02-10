@@ -101,13 +101,17 @@
     </table>
     <h2>Cat Form</h2>
     <form action="">
-        <label for="">Is your cat an indoỏ or outdoor cat?</label>
-        <input type="radio" name="cat">Indoor
-        <input type="radio" name="cat">Outdoor<br>
-        <label for="">What's your cat's personality</label>
-        <input type="checkbox" name="personality">Loving
-        <input type="checkbox" name="personality">Lazy
-        <input type="checkbox" name="personality">Crazy<br>
+        <fieldset>
+            <legend for="">Is your cat an indoỏ or outdoor cat?</legend>
+            <input type="radio" name="cat">Indoor
+            <input type="radio" name="cat">Outdoor<br>
+        </fieldset><br>
+        <fieldset>
+            <legend for="">What's your cat's personality</legend>
+            <input type="checkbox" name="personality">Loving
+            <input type="checkbox" name="personality">Lazy
+            <input type="checkbox" name="personality">Crazy<br>
+        </fieldset>
         <input type="text" placeholder="cat photo URL" required><button>Submit</button>
     </form>
     <p>No Copyright- <a href="">rikkei.edu.vn</a></p>
