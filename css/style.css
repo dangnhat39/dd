@@ -1,0 +1,19 @@
+h3{
+    background-color: rgb(red, green, blue);
+}
+button{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+h1{
+    text-align: right;
+    text-decoration: underline wavy;
+    font-family: ;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
