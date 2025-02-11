@@ -4,6 +4,7 @@
     font-weight: bold;
     opacity: 0.8;
     
+    
 }
 
 .solid {
@@ -11,13 +12,15 @@
     text-align: center;
     height: 30px;
     padding: 10px;
-    padding-left: cm;
+    padding-left: 3cm;
+    margin-left: 1cm;
 }
 
 div {
     background-color: #d4d3d0;
     opacity: 0.8;
     padding-left: 1cm;
+    padding: 7%;
 }
 
 .center {
@@ -56,5 +59,9 @@ div {
     text-align: center;
     display: block;
     border-radius: 5px;
+    margin-top: 2cm;
     
+}
+.text{
+    padding-left: 1cm;
 }
