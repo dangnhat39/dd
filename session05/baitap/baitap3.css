@@ -1,7 +1,10 @@
 div {
     background-color: rgb(223, 223, 218);
+    padding: 20px;
 }
-
+h1{
+    text-align: center;
+}
 caption {
     color: rgb(29, 27, 27);
     font-size: 20px;
