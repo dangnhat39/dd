@@ -14,9 +14,11 @@
     background-color: rgb(229, 227, 224);
     color: black;
     vertical-align: middle;
+    padding-left: 0,4cm;
 }
 img{
     vertical-align: middle;
+    margin-left: 1cm;
 }
 .h3{
     display: inline-block;
@@ -45,4 +47,7 @@ a{
 h1{
     width: 80%;
     display: inline-block;
+}
+span{
+    opacity: 0.5;
 }
