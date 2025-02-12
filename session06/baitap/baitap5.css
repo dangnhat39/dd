@@ -1,0 +1,51 @@
+.div1{
+    background-color: green;
+    color: white;
+    height: 1cm;
+    padding-top: 1m;
+   text-align: right;
+    
+}
+.a2{
+    text-decoration: none;
+    padding-right: 24cm;
+    color: white;
+}
+.a1{
+    text-decoration: none;
+    color: white;
+    text-align: right;
+    padding-left: 3cm;
+    padding-right: 0.5cm;
+}
+.div2{
+    text-align: center;
+    background-color: rgb(241, 245, 248);
+    color: black;
+    height: 4cm;
+    padding-top: 1.5cm;
+}
+.div3{
+    text-align: center;
+    background-color: rgb(254, 254, 254);
+    
+    padding-top: 0.5cm;
+}
+.button1{
+    background-color: rgb(255, 249, 249);
+    color: black;
+    padding-left: 5 cm;
+    width: 12.5cm;
+    border-radius: 3px;
+    height: 1.5cm;
+}
+.div4{
+    background-color: black;
+    color: white;
+    height: 0.5cm;
+    text-align: center;
+}
+.button2{
+    background-color: green;
+    color: white;
+}
