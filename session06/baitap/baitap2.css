@@ -1,0 +1,25 @@
+.div1{
+    background-color: rgb(222, 224, 226);
+    padding: 0.1cm;
+    width: 6cm;
+    height: 8cm;
+}
+.div2{
+    background-color: white;
+    width: 5.5cm;
+    margin-left: 0.1cm;
+    height: 7cm;
+    padding-left: 0.121cm;
+}
+button{
+    color: white;
+    background-color: rgb(89, 134, 211);
+    margin-top: 0.2cm;
+    text-align: center;
+    width: 4.6cm;
+    border-radius: 3px;
+    height: 1cm;
+}
+h2{
+    text-align: center;
+}
