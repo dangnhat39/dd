@@ -1,29 +1,28 @@
-.accordion {
-    border: 1px solid #ccc;
+.h1{
+    background-color: aqua;
+    color: blue;
+    width: 100%;
+    height: 1cm;
+    display: inline-block;
 }
-
-.accordion-item {
-    border-bottom: 1px solid #ccc;
+div{
+    border: 1px solid black;
+    text-align: left;
+    background-color: beige;
+    display: inline-block;
 }
-
-.accordion-header {
-    padding: 10px;
-    background-color: #f0f0f0;
-    cursor: pointer;
+span{
+    color: pink;
 }
-
-.accordion-body {
-    display: none;
-    /* Ẩn nội dung mặc định */
-    padding: 10px;
+h1{
+    display: inline-block;
 }
-
-.accordion-item.active .accordion-body {
-    display: block;
-    /* Hiện nội dung khi item được chọn */
+.h01{
+    padding-left: 30cm;
 }
-
-.accordion-item.active .accordion-header {
-    background-color: #d0e7ff;
-    /* Màu khi active */
+.h02{
+    padding-right: 10cm;
+    display: inline-block;
+    vertical-align: middle;
+    
 }
