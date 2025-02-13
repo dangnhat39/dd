@@ -14,10 +14,14 @@ a{
     padding-bottom: 11cm;
 }
 p{
-    border-bottom:1px solid rgb(24, 3, 3);
+    border-bottom:1px solid rgb(24, 3, 3) ;
 }
 .p1{
     background-color: black;
     color: white;
     text-align: center;
+}
+img{
+    height: 200px;
+    width: 200px;
 }
