@@ -18,15 +18,16 @@ h1 {
 
 img {
     vertical-align: middle;
-
 }
 
 span {
     padding-left: 0.5cm;
     vertical-align: middle;
-    color: rgb(55, 18, 175);
+    color: rgb(55, 18, 175); 
 }
-
+.imgspan{
+    padding-top: 1cm;
+}
 .button1 {
     background-color: red;
     border-radius: 3px;
