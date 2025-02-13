@@ -1,0 +1,61 @@
+
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+}
+
+.header {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+.hot {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 2px 5px;
+    margin-top: ;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.orange {
+    color: orange;
+}
+
+.register {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    
+
+    margin: 5px;
+    width: 100%;
+}
+
+.details {
+    border: 2px solid red;
+        /* Màu viền */
+        border-radius: 20px;
+        /* Đường viền bo tròn */
+        padding: 10px 20px;
+        background-color: white;
+        /* Màu nền */
+        color: red;
+        /* Màu chữ */
+      
+       
+        align-items: center;
+}
