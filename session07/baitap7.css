@@ -1,0 +1,56 @@
+
+
+.head h2 {
+    display: inline-block;
+    position: relative;
+}
+
+.head i {
+    display: inline-block;
+    position: absolute;
+    top: 35px;
+    left: 10cm;
+}
+
+.body1 {
+    background-color: rgb(243, 249, 249);
+    border: 1px;
+    width: 11cm;
+    height: 9cm;
+    border-radius: 5px;
+    padding-left: 0.3cm;
+}
+
+hr {
+    left: 0px;
+    width: 10.9cm;
+    
+}
+
+input::placeholder {
+    color: black;
+    font-size: 900;
+}
+
+input {
+    width: 400px;
+    height: 35px;
+    border-radius: 1px solid;
+}
+textarea{
+    width: 400px;
+    height: 60px;
+}
+.button01{
+    margin-left: 6cm;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+
+}
+.button02{
+    margin-left: 0.1cm;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
