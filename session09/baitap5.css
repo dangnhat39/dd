@@ -21,6 +21,7 @@
     display: flex;
     padding-top: 1cm;
     justify-content: space-between;
+    margin-right: 2cm;
 }
 
 .footer {
@@ -64,6 +65,7 @@
     height: 3cm;
     padding-top: 2cm;
     text-align: center;
+   
 }
 
 .box6 {
@@ -78,22 +80,24 @@
 
 .box7 {
     background-color: green;
-    width: 25%;
+    width: 12%;
     margin-left: 1cm;
     height: 3cm;
     padding-top: 2cm;
     text-align: center;
+    
 
 }
 
 .box8 {
     background-color: green;
-    width: 25%;
+    width: 12%;
     margin-left: 1cm;
     height: 3cm;
     margin-right: 2cm;
     padding-top: 2cm;
     text-align: center;
+    margin-left: 28cm;
 }
 
 .box4 {
