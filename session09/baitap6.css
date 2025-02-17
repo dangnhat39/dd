@@ -46,11 +46,3 @@ body {
 }
 
 
-@media (min-width: 768px) {
-    .small-boxes {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-       
-        gap: 10px;
-    }
-}
