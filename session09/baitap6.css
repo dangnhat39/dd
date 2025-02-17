@@ -1,0 +1,56 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.big-box {
+    background-color: #333;
+    color: white;
+    width: 150px;
+    height: 100px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.small-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: 10px;
+}
+
+.small-box {
+    background-color: #333;
+   
+    color: white;
+   
+    width: 70px;
+  
+    height: 45px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  
+}
+
+
+@media (min-width: 768px) {
+    .small-boxes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+       
+        gap: 10px;
+    }
+}
