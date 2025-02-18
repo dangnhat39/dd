@@ -26,12 +26,14 @@ div {
 
 .football {
     background-color: antiquewhite;
-
     height: 2cm;
     width: 3cm;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(red, white);
+   
+    
 }
 
 .bascket {
@@ -43,6 +45,7 @@ div {
     align-items: center;
     justify-content: center;
     margin-bottom: 0.5cm;
+    background-image: linear-gradient(red, white);
 }
 
 .car {
@@ -53,6 +56,7 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(red, white);
 }
 
 .table {
@@ -64,6 +68,7 @@ div {
         align-items: center;
         justify-content: center;
         margin-bottom: 0.5cm;
+        background-image: linear-gradient(red, white);
 }
 .left{
     padding-left: 1cm;
