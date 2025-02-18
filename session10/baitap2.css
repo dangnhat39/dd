@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h3{
+    padding-left: 1cm;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    margin-top: 0.2cm;
+}
+
+.header {
+    display: flex;
+    background-color: rgb(162, 192, 192);
+}
+
+div {
+    background-color: rgb(162, 192, 192);
+    width: 50%;
+    height: 40%;
+
+}
+
+.football {
+    background-color: antiquewhite;
+
+    height: 2cm;
+    width: 3cm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bascket {
+    background-color: antiquewhite;
+    padding-left: 0.3cm;
+    height: 2cm;
+    width: 3.7cm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5cm;
+}
+
+.car {
+    background-color: antiquewhite;
+
+    height: 2cm;
+    width: 3cm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table {
+    background-color: antiquewhite;
+        padding-left: 0.3cm;
+        height: 2cm;
+        width: 3.7cm;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5cm;
+}
+.left{
+    padding-left: 1cm;
+}
+.mid{
+    padding-left: 1cm;
+}
+.mid_right{
+    padding-left: 1cm;
+
+}
+.right{
+    padding-left: 1cm;
+}
