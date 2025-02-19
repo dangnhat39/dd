@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.desktop {
+    background-color: white;
+    width: 100%;
+
+}
+
+.rectangle {
+    width: 80%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: 1cm solid blue;
+    height: 4cm;
+    background-color: blue;
+
+}
+
+.footer2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.gray {
+    background-color: gray;
+    border: 1cm solid gray;
+    width: 13%;
+    margin-top: 1cm;
+    margin-left: 2.5cm;
+}
+
+.gray4 {
+    background-color: gray;
+    border: 1cm solid gray;
+    width: 13%;
+    margin-top: 1cm;
+    margin-left: 2.5cm;
+}
+
+.gray2 {
+    background-color: gray;
+    border: 1cm solid gray;
+    width: 10%;
+    margin-top: 1cm;
+    margin-left: 2.5cm;
+}
+
+.gray3 {
+    background-color: gray;
+    border: 1cm solid gray;
+    width: 10%;
+    margin-top: 1cm;
+    margin-left: 2.5cm;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.red {
+    display: flex;
+    width: 39%;
+    margin-left: 2.5cm;
+
+    border: solid red;
+    height: 3cm;
+    background-color: red;
+}
+
+.yellow {
+    display: flex;
+    width: 39%;
+    margin-left: 2.5cm;
+
+    border: solid red;
+    height: 3cm;
+    background-color: red;
+}
+
+
+
+.footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.back {
+    width: 17.5%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: 1cm solid black;
+    height: 3cm;
+    background-color: black;
+}
+
+.pink {
+    width: 20%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: 1cm solid black;
+    height: 3cm;
+    background-color: black;
+
+}
+
+.orange {
+    width: 20%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: 1cm solid black;
+    height: 3cm;
+    background-color: black;
+}
+
+
+
+
+
+@media screen and (max-width:1200px) {
+    .desktop {
+        width: 100%;
+    }
+
+    .rectangle {
+        width: 100%;
+        margin-top: 1cm;
+        border: 1cm solid blue;
+        margin-left: 0cm;
+
+
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0cm;
+    }
+
+    .red {
+        display: flex;
+        width: 100%;
+        margin-left: 2.5cm;
+        margin-top: 1cm;
+        border: solid red;
+        height: 3cm;
+        background-color: red;
+        margin-left: 0cm;
+    }
+
+    .yellow {
+        display: flex;
+        width: 100%;
+        margin-left: 2.5cm;
+        margin-top: 0.5cm;
+        border: solid red;
+        height: 3cm;
+        background-color: red;
+        margin-left: 0cm;
+    }
+
+
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .back {
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: 1cm solid black;
+        height: 3cm;
+        background-color: black;
+    }
+
+    .back {
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: 1cm solid black;
+        height: 3cm;
+        background-color: black;
+    }
+
+    .pink {
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: 1cm solid black;
+        height: 3cm;
+        background-color: black;
+    }
+
+    .orange {
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: 1cm solid black;
+        height: 3cm;
+        background-color: black;
+    }
+
+    .gray {
+        width: 40%;
+        margin-left: 0cm;
+        border: 1cm solid gray;
+        height: 3cm;
+        background-color: gray;
+        display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .gray2 {
+        width: 40%;
+        right: 0cm;
+        border: 1cm solid gray;
+        height: 3cm;
+        background-color: gray;
+        display: flex;
+    }
+
+    .gray3 {
+        width: 40%;
+        right: 0cm;
+        border: 1cm solid gray;
+        height: 3cm;
+        background-color: gray;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer2{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media screen and (min-width:700px) {
+    .desktop {
+        width: 100%;
+    }
+
+    .rectangle {
+        width: 100%;
+        margin-top: 1cm;
+        border: 1cm solid blue;
+        margin-left: 0cm;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0cm;
+    }
+
+    .red {
+        display: flex;
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: solid red;
+        height: 3cm;
+        background-color: red;
+    }
+
+    .yellow {
+        display: flex;
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 0.5cm;
+        border: solid red;
+        height: 3cm;
+        background-color: red;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .back,
+    .pink,
+    .orange {
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: 1cm solid black;
+        height: 3cm;
+        background-color: black;
+    }
+
+    .gray,
+    .gray2,
+    .gray3,
+    .gray4 {
+        width: 100%;
+        margin-left: 0cm;
+        border: 2px solid #ccc;
+        /* Viền xám nhạt */
+        height: 3cm;
+        background-color: #e0e0e0;
+        /* Màu xám nhạt */
+        display: flex;
+        justify-content: center;
+        /* Căn giữa theo chiều ngang */
+        align-items: center;
+        /* Căn giữa theo chiều dọc */
+        border-radius: 5px;
+        /* Bo tròn góc */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        /* Bóng đổ nhẹ */
+    }
+
+    .gray4 {
+        border: 2px solid #ccc;
+        /* Viền xám nhạt */
+        background-color: #e0e0e0;
+        /* Màu xám nhạt */
+    }
+
+    .footer2 {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .rectangle {
+        width: 100%;
+        margin: 1cm 0;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+
+    .red,
+    .yellow {
+        width: 100%;
+        margin: 1cm 0;
+    }
+
+    .footer,
+    .footer2 {
+        flex-direction: column;
+    }
+
+    .back,
+    .pink,
+    .orange,
+    .gray,
+    .gray2,
+    .gray3,
+    .gray4 {
+        width: 100%;
+        margin: 1cm 0;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.desktop {
+    height: 500px;
+    width: 100%;
+    background-color: white;
+
+}
+
+.header {
+    text-align: center;
+    background-color: red;
+    height: 100px;
+
+    color: white;
+    width: 1400px;
+    border-radius: 5px;
+    margin-left: 1cm;
+    margin-top: 1cm;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+}
+
+.div1 {
+    background-color: aqua;
+    display: flex;
+    margin-left: 1cm;
+    margin-top: 0.21cm;
+    height: 200px;
+    width: 200px;
+    color: white;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.div2 {
+    background-color: yellow;
+    display: flex;
+    margin-left: 1cm;
+    margin-top: 0.21cm;
+    height: 200px;
+    width: 920px;
+    color: rgb(44, 41, 41);
+    justify-content: center;
+    border: 5px;
+}
+
+.div3 {
+    background-color: rgb(164, 24, 136);
+    display: flex;
+    margin-left: 1cm;
+    margin-top: 0.21cm;
+    height: 200px;
+    width: 200px;
+    color: white;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.footer {
+
+    background-color: rgb(41, 175, 224);
+    height: 100px;
+
+    color: white;
+    width: 1400px;
+    border-radius: 5px;
+    margin-left: 1cm;
+    margin-top: 0.21cm;
+    text-align: center;
+}
+
+@media screen and (max-width:768px) {
+    .header {
+        text-align: center;
+        background-color: red;
+        height: 100px;
+
+        color: white;
+        width: 88%;
+        border-radius: 5px;
+        margin-left: 1cm;
+        margin-top: 1cm;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .div1 {
+
+        background-color: aqua;
+        display: flex;
+        margin-left: 1cm;
+        margin-top: 0.21cm;
+        height: 100px;
+        width: 88%;
+        color: white;
+        justify-content: center;
+        border-radius: 5px;
+
+    }
+
+    .div2 {
+        background-color: yellow;
+        display: flex;
+        margin-left: 1cm;
+        margin-top: 0.21cm;
+        height: 200px;
+        width: 88%;
+        color: rgb(44, 41, 41);
+        justify-content: center;
+        border: 5px;
+    }
+
+    .div3 {
+        background-color: rgb(164, 24, 136);
+        display: flex;
+        margin-left: 1cm;
+        margin-top: 0.21cm;
+        height: 100px;
+        width: 88%;
+        color: white;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    .footer {
+        text-align: center;
+        background-color: rgb(41, 175, 224);
+        height: 100px;
+
+        color: white;
+        width: 88%;
+        border-radius: 5px;
+        margin-left: 1cm;
+        margin-top: 0.21cm;
+    }
+
+}
+}

@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.desktop {
+    background-color: white;
+    width: 100%;
+
+}
+
+.rectangle {
+    width: 80%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: 1cm solid blue;
+
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.red {
+    display: flex;
+    width: 39%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: solid red;
+    height: 3cm;
+    background-color: red;
+}
+
+.yellow {
+    display: flex;
+    width: 39%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: solid yellow;
+    height: 3cm;
+    background-color: yellow;
+}
+
+.rectangle2 {
+    width: 80%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: 1cm solid blue;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.back {
+    width: 17.5%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: 1cm solid black;
+    height: 3cm;
+    background-color: black;
+}
+
+.pink {
+    width: 17.5%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: 1cm solid pink;
+    height: 3cm;
+    background-color: pink;
+}
+
+.orange {
+    width: 18%;
+    margin-left: 2.5cm;
+    margin-top: 1cm;
+    border: 1cm solid orange;
+    height: 3cm;
+    background-color: orange;
+}
+
+@media screen and (max-width:768px) {
+    .desktop {
+        width: 100%;
+    }
+
+    .rectangle {
+        width: 100%;
+        margin-top: 1cm;
+        border: 1cm solid blue;
+        margin-left: 0cm;
+
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0cm;
+    }
+
+    .red {
+        display: flex;
+        width: 100%;
+        margin-left: 2.5cm;
+        margin-top: 1cm;
+        border: solid red;
+        height: 3cm;
+        background-color: red;
+        margin-left: 0cm;
+    }
+
+    .yellow {
+        display: flex;
+        width: 100%;
+        margin-left: 2.5cm;
+        margin-top: 1cm;
+        border: solid yellow;
+        height: 3cm;
+        background-color: yellow;
+        margin-left: 0cm;
+    }
+
+    .rectangle2 {
+        width: 100%;
+        margin-top: 1cm;
+        border: 1cm solid blue;
+        margin-left: 0cm;
+
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .back {
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: 1cm solid black;
+        height: 3cm;
+        background-color: black;
+    }
+
+    .back {
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: 1cm solid black;
+        height: 3cm;
+        background-color: black;
+    }
+
+    .pink {
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: 1cm solid pink;
+        height: 3cm;
+        background-color: pink;
+    }
+
+    .orange {
+        width: 100%;
+        margin-left: 0cm;
+        margin-top: 1cm;
+        border: 1cm solid orange;
+        height: 3cm;
+        background-color: orange;
+    }
+
+
+
+}
