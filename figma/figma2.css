@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Logo{
+    display: flex;
+    width: 185px;
+    height: 41px;
+    top: 29px;
+    left: 54px;
+    gap: 5px;
+}
+.top{
+    height: 100px;
+    width: 1440px;
+    background-color: #FFFFFF;
+    display: flex;
+    color: black;
+    
+}
+.img1{
+    width: 50px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    object-fit: cover;
+}
+span{
+    width: 130px;
+    height: 41px;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41.45px;
+    letter-spacing: 0px;
+}
+.a{
+
+}

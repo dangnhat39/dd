@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Phần đầu trang */
+.top {
+    width: 1440px;
+    height: 48px;
+    background-color: black;
+}
+
+.top .titer {
+    width: 859px);
+    height: 24px);
+    top: 12px;
+    left: 445px;
+    gap: 231px;
+
+}
+
+.p1 {
+    width: 474px;
+    font-weight: 900;
+    height: 18px;
+    line-height: 21px;
+    background-color: white;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    initial-letter-align: 0%;
+    color: white;
+}
+.ơption{
+    width: 78px;
+    height: 24px;
+}

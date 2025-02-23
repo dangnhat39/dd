@@ -4,162 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Game</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0d9b5;
-        }
-
-        .chessboard {
-            display: grid;
-            grid-template-columns: repeat(8, 60px);
-            grid-template-rows: repeat(8, 60px);
-            border: 2px solid black;
-        }
-
-        .square {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .black {
-            background-color: #b58863;
-        }
-
-        .white {
-            background-color: #f0d9b5;
-        }
-
-        .selected {
-            background-color: yellow;
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Delicious+Handrawn&family=Grechen+Fuemen&family=Monomakh&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="chessboard" id="chessboard"></div>
-    <script>
-        const board = document.getElementById('chessboard');
-        const pieces = {
-            'R': '♜', 'N': '♞', 'B': '♝', 'Q': '♛', 'K': '♚', 'P': '♟',
-            'r': '♖', 'n': '♘', 'b': '♗', 'q': '♕', 'k': '♔', 'p': '♙'
-        };
-        let position = [
-            "rnbqkbnr",
-            "pppppppp",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "PPPPPPPP",
-            "RNBQKBNR"
-        ];
-        let selectedSquare = null;
-        let selectedPiece = null;
-        let selectedRow = null;
-        let selectedCol = null;
-        let turn = 'white';
-
-        function createBoard() {
-            board.innerHTML = '';
-            for (let i = 0; i < 8; i++) {
-                for (let j = 0; j < 8; j++) {
-                    const square = document.createElement('div');
-                    square.classList.add('square', (i + j) % 2 === 0 ? 'white' : 'black');
-                    square.dataset.row = i;
-                    square.dataset.col = j;
-                    const piece = position[i][j].trim();
-                    if (piece) {
-                        square.textContent = pieces[piece];
-                    }
-                    square.addEventListener('click', () => handleMove(square));
-                    board.appendChild(square);
-                }
-            }
-        }
-
-        function checkGameOver() {
-            const boardString = position.join('');
-            if (!boardString.includes('K')) {
-                alert('Black wins!');
-                location.reload();
-            } else if (!boardString.includes('k')) {
-                alert('White wins!');
-                location.reload();
-            }
-        }
-
-        function promotePawn(row, col, piece) {
-            const promotion = prompt("Promote to (Q, R, B, N):", "Q");
-            if (["Q", "R", "B", "N"].includes(promotion)) {
-                position[row] = position[row].substring(0, col) + (piece === 'P' ? promotion : promotion.toLowerCase()) + position[row].substring(col + 1);
-            }
-        }
-
-        function isValidMove(piece, startRow, startCol, endRow, endCol) {
-            const rowDiff = Math.abs(endRow - startRow);
-            const colDiff = Math.abs(endCol - startCol);
-            switch (piece.toLowerCase()) {
-                case 'p':
-                    const direction = piece === 'P' ? -1 : 1;
-                    if (startCol === endCol && position[endRow][endCol] === ' ') {
-                        return (endRow - startRow === direction) ||
-                            (startRow === (piece === 'P' ? 6 : 1) && endRow - startRow === 2 * direction);
-                    } else if (Math.abs(startCol - endCol) === 1 && endRow - startRow === direction && position[endRow][endCol] !== ' ') {
-                        return true;
-                    }
-                    return false;
-                case 'r': return startRow === endRow || startCol === endCol;
-                case 'n': return (rowDiff === 2 && colDiff === 1) || (rowDiff === 1 && colDiff === 2);
-                case 'b': return rowDiff === colDiff;
-                case 'q': return rowDiff === colDiff || startRow === endRow || startCol === endCol;
-                case 'k': return rowDiff <= 1 && colDiff <= 1;
-                default: return false;
-            }
-        }
-
-        function handleMove(square) {
-            const row = parseInt(square.dataset.row);
-            const col = parseInt(square.dataset.col);
-            const piece = position[row][col].trim();
-            const isWhite = piece.toUpperCase() === piece;
-
-            if (selectedSquare) {
-                selectedSquare.classList.remove('selected');
-                if (selectedSquare !== square) {
-                    if (isValidMove(selectedPiece, selectedRow, selectedCol, row, col)) {
-                        position[row] = position[row].substring(0, col) + selectedPiece + position[row].substring(col + 1);
-                        position[selectedRow] = position[selectedRow].substring(0, selectedCol) + ' ' + position[selectedRow].substring(selectedCol + 1);
-                        if ((selectedPiece === 'P' && row === 0) || (selectedPiece === 'p' && row === 7)) {
-                            promotePawn(row, col, selectedPiece);
-                        }
-                        turn = turn === 'white' ? 'black' : 'white';
-                        checkGameOver();
-                    }
-                }
-                selectedSquare = null;
-                selectedPiece = null;
-                createBoard();
-            } else if (piece && (turn === 'white' ? isWhite : !isWhite)) {
-                selectedSquare = square;
-                selectedPiece = piece;
-                selectedRow = row;
-                selectedCol = col;
-                square.classList.add('selected');
-            }
-        }
-
-        createBoard();
-    </script>
+    <div class="top">
+        <div class="titer"><p class="p1">Summer Sale For All Swim Suits And Free Express Delivery-OFF 50%! <a href="">ShopNow</a></p></div>
+        <div class="option">
+            <select name="" id="">
+                <option value="">ENG</option>
+                <option value="">VN</option>
+                <option value="">LAO</option>
+            </select>
+        </div>
+    </div><hr>
+    <div class="header">
+        <div> 
+            <div>Logo</div>
+            <div>Home</div>
+            <div>Contact</div>
+            <div>About</div>
+            <div>Sign Up</div>
+            <form action="">
+                <label for="">
+                    <input type="text"><img src="" alt="">
+                </label>
+            </form>
+            <div><img src="" alt=""></div>
+            <div><img src="" alt=""></div>
+            <div><img src="" alt=""></div>
+        </div>
+    </div>
+    <div class="body">
+        <div>
+            <p>Home</p>/ My Account
+        </div>
+        <div>
+            <h3>Welcome</h3>
+            <h3>Mid Rimel</h3>
+        </div>
+        <div>
+            <div><h3>Manage My Accout</h3></div>
+            <div>My Profile</div>
+            <div><p>Address Book</p></div>
+            <div><p>MY Payment Options</p></div>
+            <div><h2>My Orders </h2></div>
+            <div><p>My Returns</p></div>
+            <div><p>My Cancelations</p></div>
+            <div><h2>My WishList</h2></div>
+        </div>
+            <div><h1>Edit Your Profile</h1></div>
+            <table>
+                <tr>
+                    <td>
+                        <form action="">
+                            <label for="">First Name
+                            </label><br>
+                            <input type="text" placeholder="Md">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="">
+                            <label for="">Last Name</label><br>
+                            <input type="text" placeholder="Rimel">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="">
+                            <label for="">Email</label><br>
+                            <input type="text" placeholder="rimel@gmail.com">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="">
+                            <label for="">Address</label><br>
+                            <input type="text" placeholder="Kingston,5236,United State">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <form action="">
+                <label for="">Password Changes</label><br>
+                <input type="text" placeholder="Curent Password"><br>
+                <input type="text" placeholder="New Password"><br>
+                <input type="text" placeholder="Confirm New Password"><br>
+                <button>Cancel</button>
+                <button>Save Changes</button>
+            </form>
+            </td>
+    </div>
+    <div class="footer">
+        <div class="footer1">
+            <h2>Exclusive</h2>
+            <h3>Subscribe</h3>
+            <p>Get 10% off your first arder</p>
+            <form action="">
+                
+                <input type="text" placeholder="Enter your email"><img src="" alt="">
+            </form>
+        </div>
+        <div class="footer2">
+            <h3>Support</h3>
+            <p>111 Bijoy sarani,Dahaka,<br>
+            DH 1515,Bangladesg.</p>
+            <p>exclusive@gmail.com</p>
+            +88015-88888-9999
+        </div>
+        <div class="footer3">
+            <h3>Account</h3>
+            <p>My Account</p>
+            <p>Login/Register</p>
+            <p>Cart</p>
+            <p>WishList</p>
+            <p>Shop</p>
+        </div>
+        <div class="footer4">
+            <h3>Download App</h3>
+            <p>Save $3 with App New User Only</p>
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+        <div class="bot">&#169; Copyright Rimel 2022 All right reserved</div>
+    </div>
 </body>
 
 </html>
