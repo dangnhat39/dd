@@ -1,0 +1,453 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Phần đầu  */
+.header {
+    height: 104px;
+    width: 1, 440px;
+    padding-top: 24px;
+    padding-right: 80px;
+    padding-bottom: 24px;
+    padding-left: 80px;
+
+}
+
+.logo {
+    width: 139.91px;
+    height: 40px;
+    gap: 12px;
+}
+
+.container {
+    width: 1, 280px;
+    height: 56px;
+    justify-content: space-between;
+    padding: 32px;
+    left: 32px;
+    display: flex;
+    flex-direction: row;
+}
+
+.img_group {
+    width: 39.91px;
+    height: 40px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.personal {
+    font-weight: 700;
+    size: 20px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    color: #000000;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.taskbaar {
+    width: 437px;
+    height: 24px;
+    gap: 32px;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: black;
+}
+
+.about_me {
+    width: 98px;
+    height: 24px;
+    gap: 10px;
+    size: 20px;
+    letter-spacing: -2%;
+    line-height: 24px;
+    color: black;
+    text-decoration: none;
+}
+
+.skills {
+    width: 54px;
+    height: 24px;
+    font-weight: 600;
+    size: 20px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    text-decoration: none;
+}
+
+button {
+
+    width: 153px;
+    height: 56px;
+    border-radius: 4px;
+    padding-top: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 16px;
+    gap: 8px;
+    background-color: #000000;
+}
+
+span {
+    size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    letter-spacing: 2%;
+}
+
+.img_resume {
+    color: white;
+    width: 15px;
+    height: 15px;
+    top: 2.5px;
+    left: 2.5px;
+    border: 2px;
+
+}
+
+/* phần thân */
+.body {
+    width: 1, 1440px;
+    height: 716px;
+    padding-top: 60px;
+    ;
+    padding-right: 80px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+}
+
+.body_mid {
+    justify-content: space-between;
+    width: 1, 280px;
+    height: 596px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    flex-direction: row;
+}
+
+.img_banner {
+    width: 889px;
+    height: 596px;
+}
+
+.text {
+    width: 600px;
+    height: 376px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 48px;
+}
+
+.img_socialnetwork {
+    width: 320px;
+    height: 64px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    gap: 32px;
+    display: flex;
+    flex-direction: row;
+}
+
+.facebook {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    padding: 16px;
+    gap: 8px;
+    color: #000000;
+}
+
+.discord {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    padding: 16px;
+    gap: 8px;
+}
+
+.twier {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    padding: 16px;
+    gap: 8px;
+}
+
+.yahho {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    padding: 16px;
+    gap: 8px;
+}
+
+.my_skills {
+    width: 1, 440px;
+    height: 728px;
+    padding-top: 60px;
+    padding-right: 80px;
+    padding-left: 80px;
+    padding-bottom: 60px;
+}
+
+
+
+.my_skills1 {
+    width: 1, 216px;
+    height: 492px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.h1 {
+    text-align: center;
+}
+
+.skill_header {
+    width: 1, 216px;
+    height: 226px;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.skill_footer {
+    width: 1, 216px;
+    height: 226px;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.git {
+    width: 186px;
+    height: 186px;
+    border-radius: 4px;
+    border: 2px;
+    padding: 24px;
+    gap: 32px;
+}
+
+.js {
+    width: 186px;
+    height: 186px;
+    border-radius: 4px;
+    border: 2px;
+    padding: 24px;
+    gap: 32px;
+}
+
+.sass {
+    width: 186px;
+    height: 186px;
+    border-radius: 4px;
+    border: 2px;
+    padding: 24px;
+    gap: 32px;
+
+}
+
+.net_js {
+    width: 186px;
+    height: 186px;
+    border-radius: 4px;
+    border: 2px;
+    padding: 24px;
+    gap: 32px;
+}
+
+.storybook {
+    width: 186px;
+    height: 186px;
+    border-radius: 4px;
+    border: 2px;
+    padding: 24px;
+    gap: 32px;
+}
+
+.img_footer {
+    width: 186px;
+    height: 186px;
+    border-radius: 4px;
+    border: 2px;
+    padding: 24px;
+    gap: 32px;
+}
+
+/* phần cuối trang */
+.footer {
+    width: 1, 440px;
+    height: 965px;
+    padding-top: 60px;
+    padding-right: 80px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    background-color: #8c2525;
+}
+
+.my_experience {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.all {
+    width: 1, 216px;
+    height: 720px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 32;
+    display: flex;
+    flex-direction: column;
+}
+
+.all1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.google {
+    width: 1, 168px;
+    height: 192px;
+    border-radius: 10px;
+    border: 1px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.img_google {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+}
+
+.lead {
+    width: 600;
+    size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -2%;
+    color: #FFFFFF;
+    padding-left: 10cm;
+}
+
+.nov2019 {
+    size: 16px;
+    align-items: center;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -2%;
+    flex-direction: row-reverse;
+    display: flex;
+    padding-left: 10cm;
+}
+
+.p1 {
+    color: #FFFFFF;
+}
+
+.lead1 {
+    width: 600;
+    size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -2%;
+    color: #FFFFFF;
+    padding-left: 10cm;
+}
+
+.nov2017 {
+    size: 16px;
+    align-items: center;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -2%;
+    flex-direction: row-reverse;
+    display: flex;
+    padding-left: 8cm;
+}
+
+.p2 {
+    color: #FFFFFF;
+}
+
+.end {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+
+}
+
+.text_end {
+    color: #FFFFFF;
+}
+
+.p_end {
+    color: #FFFFFF;
+}
+
+@media screen and (max-width:768px) {
+    .header {
+        width: 375px;
+        height: 72px;
+        padding: 16px;
+
+    }
+
+    .container {
+        width: 343px;
+        height: 40px;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .logo {
+        width: 23.15px;
+        height: 34.73px;
+        top: 2.64px;
+        left: 8.38;
+    }
+
+    .taskbaar {
+        display: none;
+    }
+    .button{
+        display: none;
+    }
+    .body{
+        width: 375px;
+        height: 868px;
+        padding-top: 40px;
+        padding-left: 16px;
+        padding-bottom: 40px;
+        padding-right: 16px;
+    }
+    .img_banner{
+        width: 343px;
+        height: 332px;
+        padding-top:20px ;
+        padding-bottom:20px ;
+    }
+    .text{
+        
+        display: none;
+
+    }
+}
