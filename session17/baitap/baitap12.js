@@ -1,25 +1,20 @@
-function decimalToBinary(decimal) {
-    if (decimal < 0) {
-        return "Invalid input. Please enter a non-negative integer.";
-    }
-    let binary = '';
-    while (decimal > 0) {
-        binary = (decimal % 2) + binary;
-        decimal = Math.floor(decimal / 2);
-    }
-    return binary || '0';
-}
 
-const number = parseInt(prompt("Enter a number: "), 10);
+const number = prompt("Nhập vào một số nguyên:");
+if (number !== null) {
+    const integerNumber = parseInt(number); 
 
-if (isNaN(number)) {
-    console.log("Invalid input. Please enter a valid number.");
-} else if (number < 0) {
-    console.log("Invalid input. Please enter a non-negative integer.");
-} else {
-    let binary = '';
-    let tempNumber = number;
-    while (tempNumber > 0) {
+    if (isNaN(integerNumber)) {
+        console.log("Vui lòng nhập vào một số nguyên hợp lệ.");
+    } else {
+        let binaryRepresentation = ""; 
+        let n = integerNumber; 
+
+       
+        do {
+            binaryRepresentation = (n % 2) + binaryRepresentation; 
+            n = Math.floor(n / 2); 
+        } while (n > 0); 
+
+        console.log(`Số nhị phân của ${integerNumber} là: ${binaryRepresentation}`);
     }
-    console.log("Binary representation: " + (binary || '0'));
-}
+}  
