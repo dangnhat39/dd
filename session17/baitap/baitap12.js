@@ -1,3 +1,4 @@
-const so = parseInt(prompt('Nhập vào một số: '), 10);
-const nhiPhan = so.toString(2);
-document.write(`Số nhị phân là: ${nhiPhan}`);
+let number = 55;
+let result = number.toString(2);
+console.log("number", result);
+// dùng vòng lặp đệ quy
