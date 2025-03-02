@@ -28,7 +28,7 @@ switch (number) {
         alert("số 8");
         break;
     case '9':
-        alert("số "9");
+        alert("số 9");
         break;
     default:
         alert("Vui long nhập số từ 1 -9");

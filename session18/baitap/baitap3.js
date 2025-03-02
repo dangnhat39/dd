@@ -1,15 +1,17 @@
-let a = prompt("Hãy Nhập tên người dùng vào đây");
-if (a === "ADMIN") {
-    let password = prompt("Hãy nhập mật khẩu");
-    if (password === "TheMaster") {
-        document.write("Welcome");
-    } else if (password === null) {
-        document.write("Cancelled");
+let username = prompt("Nhập tên người dùng:");
+
+if (username === null || username === "") {
+    alert("Cancelled");
+} else if (username === "ADMIN") {
+    let password = prompt("Nhập mật khẩu:");
+
+    if (password === null) {
+        alert("Cancelled");
+    } else if (password === "TheMaster") {
+        alert("Welcome");
     } else {
-        document.write("Wrong password");
+        alert("Wrong password");
     }
-} else if (a === null) {
-    document.write("Cancelled");
 } else {
-    document.write("I Don’t know you");
-}
+    alert("I Don't know you");
+}  
