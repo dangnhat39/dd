@@ -1,17 +1,7 @@
-
-let input = prompt("Nhập vào một ký tự:");
-
-if (input) { 
-    if (input.length === 1) {
-        const charCode = input.charCodeAt(0);
-        if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
-            console.log(`ký tự ${input} là chữ cái`);
-        } else {
-            console.log(`không phải chữ cái`);
-        }
-    } else {
-        console.log(`không phải chữ cái`);
-    }
+const char = prompt("xin moi nhap ki tu");
+if (((char.indexOf('0') && char.indexOf('1') && char.indexOf('2') && char.indexOf("3") && char.indexOf('4') && char.indexOf('5') && char.indexOf('6') && char.indexOf('7') && char.indexOf('8') && char.indexOf('9')) == -1)) {
+    alert(`${char} la chu cai `);
 } else {
-    console.log("Bạn chưa nhập ký tự nào.");
-}  
+    alert(`ki tu ${char} khong phai chu cai`);
+}
+console.log(char.indexOf())
