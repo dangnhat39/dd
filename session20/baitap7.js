@@ -1,23 +1,14 @@
-let number = parseInt(prompt("Nhập số bất kì: "));
+let soLuong = parseInt(prompt("Nhập số lượng số Fibonacci cần hiển thị: "));
 
-if (Number.isInteger(number)) {
-    let isPrime = true;
-    if (number <= 1) {
-        isPrime = false;
-    } else {
-        for (let i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i === 0) {
-                isPrime = false;
-                break;
-            }
-        }
+if (!isNaN(soLuong) && soLuong > 0) {
+    let dayFibonacci = [1, 1];
+    for (let i = 2; i < soLuong; i++) {
+        dayFibonacci[i] = dayFibonacci[i - 1] + dayFibonacci[i - 2];
     }
+    document.write(dayFibonacci);
 
-    if (isPrime) {
-        document.write(`Số ${number} là số nguyên tố`);
-    } else {
-        document.write(`Số ${number} không là số nguyên tố`);
-    }
+} else if (soLuong === 1) {
+    document.write([1]);
 } else {
-    alert("Dữ liệu nhập vào không hợp lệ.");
+    document.write("Giá trị nhập không hợp lệ. Vui lòng nhập một số nguyên dương.");
 }
