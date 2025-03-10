@@ -1,53 +1,73 @@
-let arr = [];
-let flag = 1;
-let sum = 0;
-let choice = 0;
+let mang = [];
+let choice;
 do {
-    console.log("1. Nhập mảng số nguyên");
-    console.log("2. Hiển thị mảng");
-    console.log("3. Tìm tổng các số chẵn trong mảng");
-    console.log("4. Tính trung bình cộng của các mảng");
-    console.log("5. Xóa phần tử tại vị trí chỉ định");
-    console.log("6. Tìm phần tử lớn thứ hai trong mảng");
-    console.log("7. Thoát");
-    choice = parseInt(prompt("Nhập lựa chọn của bạn:"));
-    switch(choice) {
+    console.log(`
+================== MENU ===================
+1. Nhập mảng
+2. Hiển thị mảng
+3. Tìm các phần tử chẵn và lẻ
+4. Tính trung bình cộng của mảng
+5. Xóa phần tử tại vị trí chỉ định
+6. Tìm phần tử lớn thứ hai trong mảng
+7. Thoát chương trình
+===========================================
+`);
+    choice = parseInt(prompt("Lựa chọn của bạn: "));
+    switch (choice) {
         case 1:
-            let length = parseInt(prompt("Nhập số phần tử của mảng:"));
-            if(length > 0) {
-                arr = [];
-                for (let i = 0; i < length; i++) {
-                    let number = parseInt(prompt(`Nhập phần tử thứ ${i+1}:`));
-                    arr.push(number);
-                }
+            let n = parseInt(prompt("Nhập số phần tử của mảng "));
+            mang = [];
+            for (let i = 0; i < n; i++) {
+                mang.push(parseInt(prompt(`Nhập giá trị phần tử thứ ${i + 1}: `)));
             }
             break;
         case 2:
-            console.log("Mảng hiện tại:", arr);
+            console.log('Mảng hiện tại: ' + mang.join(', '));
             break;
         case 3:
-            console.log("Tổng các số chẵn trong mảng:");
-            sum = 0;
-            flag = 0;  
-            for (let i = 0; i < arr.length; i++){
-                if (arr[i] % 2 == 0) {
-                    sum += arr[i];
-                    console.log(arr[i]);
-                    flag = 1;
+            let chan = 0;
+            let le = 0;
+            for (let i = 0; i < mang.length; i++) {
+                if (mang[i] % 2 === 0) {
+                    chan++;
+                } else {
+                    le++;
                 }
             }
-            flag ? console.log("Tổng của tất cả số chẵn trong mảng là " + sum) : console.log("Trong mảng không có số chẵn.");
+            console.log(`Số chẵn có trong mảng là: ${chan}`);
+            console.log(`Số lẻ có trong mảng là: ${le}`);
             break;
         case 4:
-            console.log("Trung bình cộng của các phần tử trong mảng:");
-            sum = 0;
-            for (let i = 0; i < arr.length; i++) {
-                sum += arr[i];
+            let sum = 0;
+            for (let i = 0; i < mang.length; i++) {
+                sum += mang[i]
             }
-            console.log("Trung bình cộng là " + (sum / arr.length));
+            let trungBinhCong = sum / mang.length;
+            console.log("Trung bình cộng của mảng là:" + trungBinhCong);
             break;
-        default:
-            console.log("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
+        case 5:
+            // let deletE = parseInt(prompt("Nhập vị trí muốn xóa"));
+            // if (isNaN(deletE) || deletE < 0 || deletE >= mang.length) {
+            //     console.log("Vị trí không hợp lệ");
+            // } else {
+            //     mang.splice(deletE, 1);  
+            //     console.log("Mảng sau khi xóa: " + mang); 
+            // }
+            let deletE = parseInt(prompt("Nhập vị trí muốn xóa "));
 
+            if (isNaN(deletE) || deletE < 1 || deletE > mang.length) {
+                console.log("Vị trí không hợp lệ");
+            } else {
+                mang.splice(deletE - 1, 1);
+                console.log("Mảng sau khi xóa: " + mang);
+            }
+            break;
+        case 6:
+            mang.sort((a, b) => a - b);
+            console.log("Số lớn thứ 2 trong mảng là: " + mang[mang.length - 2]);
+            break;
+        case 7:
+            console.log("Thoát chương trình");
+            break;
     }
 } while (choice !== 7);
