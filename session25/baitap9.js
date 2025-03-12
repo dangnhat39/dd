@@ -1,18 +1,19 @@
-let password = prompt("mời bạn nhập mật khẩu")
-function isStrongPassword(password) {
-    if (password.length > 8) return 0;
-
-    let isUper = 0, isLower = 0, isNumber = 0;
-    password.split('').forEach(item => {
-        if (/[A-Z]/.test(item)) isUper = 1;
-        if (/[a-z]/.test(item)) isLower = 1;
-        if (/[0-9]/.test(item)) isNumber = 1;
-        if (isUper && isLower && isNumber === 1) return 1;
-    });
-
-    return isUper && isLower && isNumber;
+let users = ["nhathat@gmail.com"];
+let email = prompt("mời bạn nhập email")
+function isValidEmail(email) {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|vn)$/;
+    return regex.test(email);
 }
-let testPassword = isStrongPassword(password);
-console.log(testPassword);
-
-testPassword ? console.log("true") : console.log("false");
+function isEmail(email, arr) {
+    if (!isValidEmail(email)) {
+        console.log("Email không hợp lệ");
+        return;
+    }
+    if (users.includes(email)) {
+        console.log("tài khoản đã tồn tại");
+    } else {
+        arr.push(email);
+        console.log("tài khoản đc đăng kí thành công");
+    }
+}
+isEmail(email, users);
