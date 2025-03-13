@@ -1,31 +1,22 @@
-function kiemTraCapSoCong(mang) {
-    if (!Array.isArray(mang) || mang.length < 2) {
-        return false;
+function sapXepChanTang(mang) {
+    if (!Array.isArray(mang) || mang.some(num => typeof num !== 'number')) {
+        return 'dữ liệu không hợp lệ';
     }
 
-    const congSai = mang[1] - mang[0];
+    const allEven = mang.every(num => num % 2 === 0);
+    const allOdd = mang.every(num => num % 2 !== 0);
 
-    for (let i = 2; i < mang.length; i++) {
-        if (mang[i] - mang[i - 1] !== congSai) {
-            return false;
-        }
+    if (allEven) {
+        return 'TRUE';
+    } else if (allOdd) {
+        return 'FALSE';
+    } else {
+        return 'FALSE';
     }
-
-    return true;
 }
 
-const mang1 = [2, 4, 6, 8, 10];
-const mang2 = [1, 3, 6, 10, 15];
-const mang3 = [5, 5, 5, 5];
-const mang4 = [10, 8, 6, 4, 2];
-const mang5 = [1, 2];
-const mang6 = [1];
-const mang7 = [];
-
-console.log(kiemTraCapSoCong(mang1));
-console.log(kiemTraCapSoCong(mang2));
-console.log(kiemTraCapSoCong(mang3));
-console.log(kiemTraCapSoCong(mang4));
-console.log(kiemTraCapSoCong(mang5));
-console.log(kiemTraCapSoCong(mang6));
-console.log(kiemTraCapSoCong(mang7));
+console.log(sapXepChanTang([2, 4, 6, 8]));
+console.log(sapXepChanTang([3, 6, 9, 12, 14]));
+console.log(sapXepChanTang('abc'));
+console.log(sapXepChanTang([1, 3, 5]));
+console.log(sapXepChanTang([2, 4, 5]));             
