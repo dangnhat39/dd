@@ -1,8 +1,8 @@
-const prompt = require("prompt-sync")(); // Dùng để nhập từ bàn phím (chạy trên Node.js)
+const prompt = require("prompt-sync")(); 
 
-let employees = []; // Danh sách nhân viên
+let employees = []; 
 
-// Thêm nhân viên mới
+
 function addEmployee() {
     let id = prompt("Nhập ID nhân viên: ");
     let name = prompt("Nhập tên nhân viên: ");
@@ -13,7 +13,7 @@ function addEmployee() {
     console.log("Nhân viên đã được thêm thành công!");
 }
 
-// Xóa nhân viên theo ID
+
 function deleteEmployee() {
     let id = prompt("Nhập ID nhân viên cần xóa: ");
     let index = employees.findIndex(emp => emp.id === id);
@@ -31,7 +31,7 @@ function deleteEmployee() {
     }
 }
 
-// Cập nhật lương nhân viên theo ID
+
 function updateSalary() {
     let id = prompt("Nhập ID nhân viên cần cập nhật lương: ");
     let employee = employees.find(emp => emp.id === id);
@@ -45,7 +45,7 @@ function updateSalary() {
     }
 }
 
-// Tìm kiếm nhân viên theo tên
+
 function searchEmployee() {
     let name = prompt("Nhập tên nhân viên cần tìm: ");
     let foundEmployees = employees.filter(emp => emp.name.toLowerCase().includes(name.toLowerCase()));
@@ -58,7 +58,7 @@ function searchEmployee() {
     }
 }
 
-// Hiển thị menu
+
 function showMenu() {
     while (true) {
         console.log("\n===== QUẢN LÝ NHÂN VIÊN =====");
