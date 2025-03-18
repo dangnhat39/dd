@@ -13,7 +13,15 @@ function isValidPassword(password) {
 
 function registerUser() {
     const name = prompt("Nhập tên: ");
-    const email = prompt("Nhập email: ");
+    let email;
+    while (true) {
+        email = prompt("Nhập email: ");
+        if (isValidEmail(email)) {
+            break;
+        } else {
+            console.log("Email không hợp lệ. Email phải chứa '@' và kết thúc bằng '.com' hoặc '.vn'. Vui lòng thử lại.");
+        }
+    }
 
     if (!isValidEmail(email)) {
         console.log("Email không hợp lệ. Email phải chứa '@' và kết thúc bằng '.com' hoặc '.vn'.");

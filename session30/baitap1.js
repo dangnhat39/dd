@@ -29,42 +29,45 @@ let products = [
     }
 ];
 
-let cart = []; 
-let choice;
-
+let cart = []; // Khai báo giỏ hàng
 
 function displayProducts() {
-    console.log("\n---- Sản phẩm ----");
+    console.log("---- Danh sách sản phẩm ----");
     products.forEach(product => {
-        console.log(`ID: ${product.id}, Tên: ${product.name}, Giá: ${product.price}, Số lượng: ${product.quantity}, Loại: ${product.category}`);
+        console.log(`${product.id}. ${product.name} - ${product.price} VND - ${product.quantity} cái - ${product.category}`);
     });
 }
-function buyProduct() {
-    let productId = Number(prompt("Nhập ID sản phẩm bạn muốn mua: "));
-    let quantityToBuy = Number(prompt("Nhập số lượng bạn muốn mua: "));
 
-    let product = products.find(p => p.id === productId);
-
-    if (product) {
-        if (quantityToBuy > product.quantity) {
-            console.log("Số lượng không đủ.");
-        } else {
-            product.quantity -= quantityToBuy; 
-            cart.push({ ...product, quantity: quantityToBuy }); 
-            console.log(`Bạn đã thêm ${quantityToBuy} ${product.name} vào giỏ hàng.`);
-        }
-    } else {
-        console.log("Sản phẩm không tồn tại.");
-    }
-} 
 function sortProductsByPriceAsc() {
     products.sort((a, b) => a.price - b.price);
     displayProducts();
 }
+
 function sortProductsByPriceDesc() {
-    prodicts.sort((a, b))=> b.price - a.price);
+    products.sort((a, b) => b.price - a.price);
     displayProducts();
 }
+
+function calculateTotalPrice() {
+    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    console.log(`Tổng tiền trong giỏ hàng: ${total} VND`);
+}
+
+function buyProduct() {
+    let productId = Number(prompt("Nhập ID sản phẩm bạn muốn mua: "));
+    let quantity = Number(prompt("Nhập số lượng: "));
+
+    let product = products.find(p => p.id === productId);
+    if (product && product.quantity >= quantity) {
+        cart.push({ ...product, quantity });
+        product.quantity -= quantity;
+        console.log("Sản phẩm đã được thêm vào giỏ hàng");
+    } else {
+        console.log("Sản phẩm không đủ số lượng hoặc không tồn tại");
+    }
+}
+
+let choice;
 do {
     console.log("\n---- Menu ----");
     console.log("1. Hiển thị sản phẩm");
@@ -98,4 +101,4 @@ do {
         default:
             console.log("Lựa chọn không hợp lệ, vui lòng thử lại.");
     }
-} while (choice !== 6);  
+} while (choice !== 6);
