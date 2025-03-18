@@ -49,7 +49,7 @@ function sortProductsByPriceDesc() {
 }
 
 function calculateTotalPrice() {
-    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    let total = cart.reduce((sum, item) => sum += item.price * item.quantity, 0);
     console.log(`Tổng tiền trong giỏ hàng: ${total} VND`);
 }
 
