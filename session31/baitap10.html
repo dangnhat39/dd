@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Danh sách nhân viên Rikkei</title>
+    <link rel="stylesheet" href="baitap10.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Danh sách nhân viên Rikkei</h1>
+
+        <div class="add-employee">
+            <input type="text" id="name" placeholder="Tên nhân viên">
+            <input type="text" id="position" placeholder="Chức vụ">
+            <button id="addBtn">Thêm nhân viên</button>
+        </div>
+
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>Chức vụ</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="pagination">
+            <button id="prevBtn">Previous</button>
+            <div id="pageNumbers"></div>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+    <script src="baitap10.js"></script>
+</body>
+
+</html>
