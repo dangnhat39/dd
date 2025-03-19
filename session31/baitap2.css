@@ -1,0 +1,12 @@
+body {
+    transition: background-color 0.3s, color 0.3s;
+    background-color: black;
+    /* Mặc định là màu đen */
+    color: white;
+    /* Chữ màu trắng */
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
