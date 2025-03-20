@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay Đổi Kích Thước Chữ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .text {
+            font-size: 16px;
+            
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text">Chữ sẽ thay đổi kích thước khi bấm nút</div>
+    <button id="increase" style="background-color: green; color: white;">+</button>
+    <button id="decrease" style="background-color: red; color: white;">-</button>
+
+    <script>
+        const textElement = document.querySelector('.text');
+        let fontSize = 16; 
+
+        document.getElementById('increase').addEventListener('click', () => {
+            fontSize += 2; 
+            textElement.style.fontSize = fontSize + 'px';
+        });
+
+        document.getElementById('decrease').addEventListener('click', () => {
+            fontSize = Math.max(10, fontSize - 2);   
+            textElement.style.fontSize = fontSize + 'px';
+        });  
+    </script>
+</body>
+
+</html>
