@@ -1,4 +1,3 @@
-
 document.querySelector('.addBtn').addEventListener('click', function () {
     const inputValue = document.getElementById('myInput').value;
     if (inputValue === '') {
