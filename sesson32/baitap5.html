@@ -5,54 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List K24_PTiT</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        #taskInput {
-            padding: 10px;
-            width: calc(100% - 22px);
-        }
-
-        button {
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .task {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            background: white;
-            margin: 5px 0;
-            border-radius: 5px;
-        }
-
-        .remove {
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="./baitap5.css">
 </head>
 
 <body>
@@ -62,37 +15,8 @@
     <button id="addTaskButton">Thêm</button>
 
     <div id="taskList"></div>
-
-    <script>
-        const taskInput = document.getElementById("taskInput");
-        const addTaskButton = document.getElementById("addTaskButton");
-        const taskList = document.getElementById("taskList");
-
-        addTaskButton.onclick = function () {
-            const taskText = taskInput.value.trim();
-            if (taskText) {
-                const taskDiv = document.createElement("div");
-                taskDiv.className = "task";
-
-                const taskLabel = document.createElement("span");
-                taskLabel.textContent = taskText;
-                taskDiv.appendChild(taskLabel);
-
-                const removeButton = document.createElement("button");
-                removeButton.textContent = "X";
-                removeButton.className = "remove";
-                removeButton.onclick = function () {
-                    taskList.removeChild(taskDiv);
-                };
-                taskDiv.appendChild(removeButton);
-
-                taskList.appendChild(taskDiv);
-                taskInput.value = ""; // Clear input field  
-            } else {
-                alert("Vui lòng nhập nhiệm vụ!");
-            }
-        };  
-    </script>
+    <script src="./baitap5.js"></script>
+    
 
 </body>
 
