@@ -15,7 +15,7 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const pageNumbersDiv = document.getElementById('pageNumbers');
 
-const itemsPerPage = 3; // Số lượng nhân viên trên mỗi trang
+const itemsPerPage = 3; 
 let currentPage = 1;
 
 function renderTable() {

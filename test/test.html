@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Đổi màu nền</title>
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-    
-    <script src="./test.html"></script>
-    <h1>Java</h1>
-    <div id="demo-id" class="demo-class">Hello world </div>
-    <div class="demo-class">Heloo world 2</div>
-    <b class="demo-class">Hello world</b>
+    <button onclick="changeColor()">Đổi màu nền</button>
+    <script>
+        function changeColor() {
+            const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
 </body>
+
 </html>
