@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kiểm Tra Số Ký Tự</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    <input type="text " id="email" placeholder="Nhập email">
-    <button onclick="validateEmail()">thêm</button>
-    <p></p>
-    <script src="./test.js"></script>
+    <h2>Viết chương trình kiểm tra số ký tự</h2>
+    <textarea id="inputText" rows="4" cols="30" placeholder="Nhập nội dung ở đây"></textarea><br><br>
+    <button onclick="checkCharacterCount()">kiểm tra</button>
+    <p id="result">0 ký tự</p>
+
+    <script>
+        function checkCharacterCount() {
+            var text = document.getElementById('inputText').value;
+            var characterCount = text.length;
+            document.getElementById('result').innerText = characterCount + ' ký tự';
+        }  
+    </script>
 </body>
+
 </html>

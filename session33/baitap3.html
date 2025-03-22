@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .product {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Lọc sản phẩm theo danh mục</h2>
+
+    <label for="categorySelect">-- Lựa chọn danh mục --</label>
+    <select id="categorySelect">
+        <option value="">Tất cả</option>
+        <option value="Đồ ăn">Đồ ăn</option>
+        <option value="Nước">Nước</option>
+        <option value="Dụng cụ">Dụng cụ</option>
+    </select>
+
+    <button id="filterButton">Lọc</button>
+
+    <div id="productList">
+        <div class="product" data-category="Đồ ăn">Tên đồ ăn: Rau sạch - Danh mục: Đồ ăn</div>
+        <div class="product" data-category="Đồ ăn">Tên đồ ăn: Thịt lợn - Danh mục: Đồ ăn</div>
+        <div class="product" data-category="Nước">Tên đồ ăn: Pepsi không calo - Danh mục: Nước</div>
+        <div class="product" data-category="Nước">Tên đồ ăn: Cocacola - Danh mục: Nước</div>
+        <div class="product" data-category="Dụng cụ">Tên đồ ăn: Cờ lê - Danh mục: Dụng cụ</div>
+        <div class="product" data-category="Dụng cụ">Tên đồ ăn: Tuy vít - Danh mục: Dụng cụ</div>
+    </div>
+
+    <script src="baitap3.js"></script>
+</body>
+
+</html>
