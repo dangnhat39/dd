@@ -5,27 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Management</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        button {
-            margin-right: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="./baitap2.css">
 </head>
 
 <body>
@@ -46,72 +26,8 @@
             
         </tbody>
     </table>
-
-    <script>
-        const courses = [
-            {
-                id: 1,
-                content: 'Learn Javascript Session 01',
-                dueDate: '2023-04-17',
-                status: 'Pending',
-                assignedTo: 'Anh Bách',
-            },
-            {
-                id: 2,
-                content: 'Learn Javascript Session 2',
-                dueDate: '2023-04-17',
-                status: 'Pending',
-                assignedTo: 'Lâm th',
-            },
-            {
-                id: 3,
-                content: 'Learn CSS Session 1',
-                dueDate: '2023-04-17',
-                status: 'Pending',
-                assignedTo: 'Hiểu Cì ết ết',
-            },
-        ];
-
-        function renderTable() {
-            const tableBody = document.querySelector('#taskTable tbody');
-            tableBody.innerHTML = ''; 
-
-            courses.forEach(course => {
-                const row = document.createElement('tr');
-
-                row.innerHTML = `  
-                    <td>${course.id}</td>  
-                    <td>${course.content}</td>  
-                    <td>${course.dueDate}</td>  
-                    <td>${course.status}</td>  
-                    <td>${course.assignedTo}</td>  
-                    <td>  
-                        <button onclick="editCourse(${course.id})">Edit</button>  
-                        <button onclick="deleteCourse(${course.id})">Delete</button>  
-                    </td>  
-                `;
-
-                tableBody.appendChild(row);
-            });
-        }
-
-        function editCourse(id) {
-            alert('Edit course with ID: ' + id);
-            
-        }
-
-        function deleteCourse(id) {
-            const index = courses.findIndex(course => course.id === id);
-            if (index > -1) {
-                courses.splice(index, 1);  
-                renderTable(); 
-            }
-        }
-
-       
-        renderTable();  
         
-    </script>
+    <script src="./baitap2.js"></script>
 </body>
 
 </html>
