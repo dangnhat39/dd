@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(sessionStorage);
+        // sessionStorage.email;
+        // sessionStorage.password;
+        // let email = sessionStorage.getItem("email");
+        // sessionStorage.user = "nhathat.124";
+        // sessionStorage.setItem("dob", "01/01/2000");
+         /* lưu trữ dữ liệu lâu dài trên trình duyệt 
+         dung lượng tầm 5mb đến 100mb
+         1mb=1024kb LƯu được 4 cái ảnh==20 cái ảnh
+
+        cú pháp lưu làm việc với logcal stoage
+        1 lưu trữ dữ liệu
+            1. local storage.setItem("tên_key","giá trị cần lưu")
+        2 lấy về
+        3 xóa
+         */
+        // let fullName="Nhathat";
+        // localStorage.setItem("fullName",fullName);       
+        // localStorage.setItem("age",age);
+        let arr=["nhat","hat","dz"];
+        // khi muốn lưu mảng lên local chuyển sang định dạng JSOM;
+        // cú pháp chuyển sang định dạng JSON
+        // JSON.stringify()
+        let age = "20";
+        age = Number(age);
+        console.log(age);
+        localStorage.setItem("arr",JSON.stringify(arr));
+        let fullName = localStorage.getItem("fullName");
+        console.log("name",fullName);
+        arr = JSON.parse(localStorage.getItem("arr"));
+        console.log(arr);
+        let students=[
+            {
+                id:1,
+                name:"iphone 15"
+            },
+            {
+                id:2,
+                name:"iphone 16"
+            }
+        ]
+        localStorage.setItem("students", JSON.stringify(students));
+        console.log("1111",arr);
+        let product =JSON.parse(localStorage.getItem("products"));
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
