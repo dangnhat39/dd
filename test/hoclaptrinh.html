@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 199vh;
+            background: linear-gradient(to right, black, red);
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 10px 0;
+            border-radius: 6px;
+        }
+
+        form {
+            border-bottom: 1px solid blue;
+            padding: 20px 20px;
+            font-size: 22px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        form input {
+            font-size: 24px;
+            width: 100%;
+            padding-right: 15px;
+            border: none;
+            outline: none;
+        }
+
+        form button {
+            background: red;
+            padding: 4px 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+        }
+
+        .toDO li {
+            list-style: none;
+            margin: 5px 0;
+        }
+    </style>
 </head>
+
 <body>
-    <script src=""></script>
+    <div class="container">
+        <form action="">
+            <input type="text" placeholder="Enter some tag" required>
+            <button type="submit">Add</button>
+        </form>
+        <ul class="toDO">
+            <li>
+                <span>Test</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var input = document.querySelector('input');
+        var form = document.querySelector('form');
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let val = input.value.trim();
+
+            if (val) {
+                // Create a new list item  
+                let ul = document.querySelector('.toDO');
+                let li = document.createElement('li');
+                let span = document.createElement('span');
+
+                // Set the text of the span to the input value  
+                span.textContent = val;
+
+                // Append span to li, and li to ul  
+                li.appendChild(span);
+                ul.appendChild(li);
+
+                // Clear the input field  
+                input.value = '';
+            }
+        });  
+    </script>
 </body>
+
 </html>

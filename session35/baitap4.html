@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Nhân Viên</title>
+    <link rel="stylesheet" href="baitap4.css">
+</head>
+
+<body>
+    <h1>Danh sách nhân viên Rikkei</h1>
+
+    <div>
+        <input type="text" id="searchInput" placeholder="tên nhân viên">
+        <input type="text" id="positionInput" placeholder="chức vụ">
+        <button id="addButton">thêm nhân viên</button>
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Chức vụ</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable"></tbody>
+    </table>
+
+    <div id="employeeCount"></div>
+
+    <div id="pagination"></div>
+
+    <script src="baitap4.js"></script>
+</body>
+
+</html>
