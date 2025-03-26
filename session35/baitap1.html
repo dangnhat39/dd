@@ -1,73 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
-    <style>
-        button {
-            margin-left: 10px;
-        }
-    </style>
+    <title>To-Do List K24</title>
+    <link rel="stylesheet" href="baitap1.css">
 </head>
 
 <body>
-    <h1>To-Do List</h1>
-    <input id="todo-input" type="text" placeholder="Nhập công việc cần tìm">
-    <button onclick="add()">Thêm</button>
-    <div id="list"></div>
-
-    <script>
-        let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
-
-        function add() {
-            const input = document.getElementById("todo-input").value.trim();
-            if (input === "") {
-                alert("Mời bạn nhập thông tin");
-                return;
-            }
-
-            const id = jobs.length > 0 ? jobs[jobs.length - 1].id + 1 : 1;
-
-            const newJob = {
-                id: id,
-                name: input
-            };
-            jobs.push(newJob);
-            localStorage.setItem("jobs", JSON.stringify(jobs));
-            document.getElementById("todo-input").value = "";
-            renderJobs();
-        }
-
-        function renderJobs() {
-            let str = "<ol>";
-            for (let job of jobs) {
-                str += `<li>${job.name}  
-                            <button onclick="update(${job.id})">Sửa</button>  
-                            <button onclick="remove(${job.id})">Xóa</button>  
-                         </li>`;
-            }
-            str += "</ol>";
-            document.getElementById("list").innerHTML = str;
-        }
-
-        function remove(id) {
-            if (confirm("Bạn có muốn xóa không?")) {
-                jobs = jobs.filter(job => job.id !== id);
-                localStorage.setItem("jobs", JSON.stringify(jobs));
-                renderJobs();
-            }
-        }
-
-        function update(id){
-            const job=jobs.find(job=>job.id===id){
-                
-            }
-        }
-
-        renderJobs();  
-    </script>
+    <div class="container">
+        <h1>To-Do List K24</h1>
+        <input type="text" id="taskInput" placeholder="Nhập công việc">
+        <button id="addTask">Thêm</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="baitap1.js"></script>
 </body>
 
 </html>
