@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="main1">
+        <div class="head">
+            <h1>Nhap ten cua ban</h1>
+        </div>
+        <div class="context">
+            <input type="text" id="name" placeholder="Nhap ten cua ban">
+            <button onclick="save()">Luu</button>
+        </div>
+
+    </div>
+    <div class="main2">
+        <div class="head">
+            <h1 id="title">Chao ban,</h1>
+        </div>
+        <div class="context">
+            <button onclick="changeName()">Doi ten</button>
+        </div>
+    </div>
+</body>
+<script>
+    function save() {
+        let name = document.getElementById("name").value;
+        localStorage.setItem("name", name);
+        showName();
+    }
+    function showName() {
+        let name = localStorage.getItem("name");
+        document.getElementById("title").innerHTML = "Chao ban," + name;
+    }
+    function changeName() {
+        console.log("changeName");
+        localStorage.getItem("name").value = localStorage.getItem("name");
+        save();
+        showName()
+    }
+</script>
+
+</html>

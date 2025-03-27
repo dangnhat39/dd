@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách món ăn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Bạn thích món nào nhất? 🍜</h1>
+    <div class="menu">
+        <div class="dish" id="bunbohue">
+            <img src="bun-bo-hue.jpg" alt="Bún bò Huế">
+            <h2>Bún bò Huế</h2>
+            <p class="likes" id="bunbohue-likes">❤️ 0 lượt thích</p>
+            <button onclick="likeDish('bunbohue')">Thích +1</button>
+        </div>
+
+        <div class="dish" id="pho">
+            <img src="pho-ha-noi.jpg" alt="Phở bò Hà Nội">
+            <h2>Phở bò Hà Nội</h2>
+            <p class="likes" id="pho-likes">❤️ 1 lượt thích</p>
+            <button onclick="likeDish('pho')">Thích +1</button>
+        </div>
+
+        <div class="dish" id="comtam">
+            <img src="com-tam-sai-gon.jpg" alt="Cơm tấm Sài Gòn">
+            <h2>Cơm tấm Sài Gòn</h2>
+            <p class="likes" id="comtam-likes">❤️ 0 lượt thích</p>
+            <button onclick="likeDish('comtam')">Thích +1</button>
+        </div>
+    </div>
+
+    <script src="baitap2.js"></script>
+</body>
+
+</html>

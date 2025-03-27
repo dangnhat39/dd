@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Chọn màu nền mà bạn yêu thích</h1>
+    <button  onclick="setBackgroundColor('green')">Xanh</button>
+    <button  onclick="setBackgroundColor('red')">Đỏ</button>
+    <button onclick="setBackgroundColor('purple')">Hồng</button>
+    <button  onclick="setBackgroundColor('yellow')">Vàng</button>
+
+    <script>
+        function setBackgroundColor(color){
+            document.body.style.backgroundColor=color;
+            localStorage.setItem('backgroundColor',color);
+        }
+        function loadBackGroundColor() {
+            let savedColor = localStorage.getItem('backgroundColor');
+            if (savedColor) {
+            document.body.style.backgroundColor = savedColor;
+            }
+        }
+        loadBackGroundColor();
+       
+    </script>
+</body>
+
+</html>
