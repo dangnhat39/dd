@@ -1,4 +1,4 @@
-// Dữ liệu danh mục mẫu  
+
 let categories = [
     { code: 'DM001', name: 'Quần áo', status: 'Đang hoạt động' },
     { code: 'DM002', name: 'Kính mắt', status: 'Ngừng hoạt động' },
@@ -9,11 +9,10 @@ let categories = [
     { code: 'DM007', name: 'Rau', status: 'Đang hoạt động' },
     { code: 'DM008', name: 'Điện thoại', status: 'Đang hoạt động' },
 ];
-
-// Hàm hiển thị danh sách danh mục  
+ 
 function displayCategories() {
     const categoryTable = document.getElementById('categoryTable');
-    categoryTable.innerHTML = ''; // Xóa nội dung trước đó  
+    categoryTable.innerHTML = ''; 
 
     categories.forEach((category, index) => {
         const row = document.createElement('tr');
@@ -34,19 +33,18 @@ function displayCategories() {
     });
 }
 
-// Hàm thêm danh mục mới  
+
 function addCategory() {
     const codeInput = document.getElementById('codeInput').value.trim();
     const nameInput = document.getElementById('nameInput').value.trim();
     const statusInput = document.querySelector('input[name="status"]:checked').value;
 
-    // Kiểm tra để đảm bảo không có trường nào bị bỏ trống  
     if (!codeInput || !nameInput) {
         alert("Mã danh mục và tên danh mục không được để trống.");
         return;
     }
 
-    // Kiểm tra xem mã danh mục đã tồn tại chưa  
+    
     const exists = categories.some(category => category.code === codeInput);
     if (exists) {
         alert("Mã danh mục đã tồn tại.");
@@ -66,7 +64,7 @@ function addCategory() {
     displayCategories();
 }
 
-// Hàm xóa danh mục  
+
 function deleteCategory(index) {
     if (confirm("Bạn có chắc chắn muốn xóa danh mục này không?")) {
         categories.splice(index, 1);
@@ -74,14 +72,14 @@ function deleteCategory(index) {
     }
 }
 
-// Hàm chỉnh sửa danh mục  
+
 function editCategory(index) {
     const category = categories[index];
     document.getElementById('codeInput').value = category.code;
     document.getElementById('nameInput').value = category.name;
     document.querySelector(`input[name="status"][value="${category.status === 'Đang hoạt động' ? 'active' : 'inactive'}"]`).checked = true;
 
-    // Xóa danh mục và thêm sự kiện cho nút thêm để cập nhật  
+    
     document.getElementById('addButton').onclick = function () {
         categories[index] = {
             code: category.code,
@@ -93,7 +91,7 @@ function editCategory(index) {
     };
 }
 
-// Hàm làm mới form  
+
 function resetForm() {
     document.getElementById('codeInput').value = '';
     document.getElementById('nameInput').value = '';
@@ -101,5 +99,5 @@ function resetForm() {
     document.getElementById('addButton').onclick = addCategory; // Trả lại sự kiện ban đầu  
 }
 
-// Khởi tạo trang  
+
 document.addEventListener('DOMContentLoaded', displayCategories);  
