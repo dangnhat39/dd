@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+button{
+    background-color: #1A0DEE;
+    width: 480px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px;
+    color: white;
+
+}
