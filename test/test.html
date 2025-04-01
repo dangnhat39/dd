@@ -1,130 +1,63 @@
 <!DOCTYPE html>
-<html lang="vi">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Quản lý công việc (Task Board)</title>
-    <link rel="stylesheet" href="baitap5.css" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        .task-input {
-            margin-bottom: 20px;
-        }
-
-        .board {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .column {
-            width: 30%;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-
-        .task {
-            display: flex;
-            justify-content: space-between;
-            margin: 5px 0;
-        }
-
-        button {
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-    <h2>🗂️ Quản lý công việc (Task Board)</h2>
-
-    <div class="task-input">
-        <input type="text" id="taskName" placeholder="Nhập tên công việc..." />
-        <button onclick="addJobs()">Thêm</button>
-    </div>
-
-    <div class="board">
-        <div class="column" id="pendingCol">
-            <h3>🕐 Chờ xử lý</h3>
-            <div id="pendingTasks"></div>
+    <div>
+        <div>
+            <img src="./Fire.png" alt="">
+            <img src="./Value & icon.png" alt="">
         </div>
-        <div class="column" id="inProgressCol">
-            <h3>🔨 Đang làm</h3>
-            <div id="inProgressTasks"></div>
+        <div>
+            <img src="./Home.png" alt="">
+            <p>Thống kê</p>
         </div>
-        <div class="column" id="doneCol">
-            <h3>✅ Hoàn thành</h3>
-            <div id="doneTasks"></div>
+        <div>
+            <img src="./Cash.png" alt="">
+            <p>Danh mục</p>
+        </div>
+        <div>
+            <img src="./Cash (1).png" alt="">
+            <p>Sản phẩm</p>
         </div>
     </div>
+    <div>
+        <img src="./Bell.png" alt="">
+        <img src="./Ellipse 6.png" alt="">
+    </div>
+    <div>
+        <h1>Danh mục</h1>
+        <button >Thêm danh mục</button>
+    </div>
+    <div>
+        <select name="" id="">
+            <option value="">Đang hoạt động</option>
+            <option value="">Ngưng hoạt động</option>
+        </select>
+    </div>
+    <div>
+        <input type="text" placeholder="Tìm kiếm danh mục theo tên">
+        <img src="./Shape.png" alt="">
+    </div>
+    <div>
+        <table>
+            <td>
+                <span>Mã danh mục <img src="./arrow-down.png" alt=""></span>
+                
+           
+        
+                <span>Tên danh mục <img src="./arrow-down.png" alt=""></span>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", loadTasks);
-
-        function loadTasks() {
-            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            tasks.forEach(task => {
-                addTaskToColumn(task);
-            });
-        }
-
-        function addJobs() {
-            const taskInput = document.getElementById("taskName").value.trim();
-            if (taskInput === "") {
-                alert("Bạn vui lòng nhập tên công việc");
-                return;
-            }
-            const task = { name: taskInput, status: "pending" };
-            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            tasks.push(task);
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-            addTaskToColumn(task);
-            document.getElementById("taskName").value = ""; // Clear the input  
-        }
-
-        function addTaskToColumn(task) {
-            const taskDiv = document.createElement("div");
-            taskDiv.classList.add("task");
-            taskDiv.innerHTML = `  
-                <span>${task.name}</span>  
-                <button onclick="changeStatus('${task.name}')">Chuyển trạng thái</button>  
-            `;
-
-            if (task.status === "pending") {
-                document.getElementById("pendingTasks").appendChild(taskDiv);
-            } else if (task.status === "inProgress") {
-                document.getElementById("inProgressTasks").appendChild(taskDiv);
-            } else if (task.status === "done") {
-                document.getElementById("doneTasks").appendChild(taskDiv);
-            }
-        }
-
-        function changeStatus(taskName) {
-            let tasks = JSON.parse(localStorage.getItem('tasks'));
-            tasks = tasks.map(task => {
-                if (task.name === taskName) {
-                    if (task.status === "pending") {
-                        task.status = "inProgress";
-                    } else if (task.status === "inProgress") {
-                        task.status = "done";
-                    }
-                }
-                return task;
-            });
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-            refreshBoard();
-        }
-
-        function refreshBoard() {
-            document.getElementById("pendingTasks").innerHTML = "";
-            document.getElementById("inProgressTasks").innerHTML = "";
-            document.getElementById("doneTasks").innerHTML = "";
-            loadTasks();
-        }  
-    </script>
+            
+                <span>Tên danh mục <img src="./arrow-down.png" alt=""></span>
+            
+            
+                <span>Tên danh mục <img src="./arrow-down.png" alt=""></span>
+            </td>
+        </table>
+    </div>
 </body>
-
 </html>

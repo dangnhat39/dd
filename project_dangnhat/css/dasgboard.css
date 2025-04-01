@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-section {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.value-icon {
+    height: 40px;
+    width: auto;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* hover chuột thì hiện bàn tay */
+}
+
+.menu-item img {
+    height: 24px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.menu-item:hover {
+    opacity: 1;
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+.ecom {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -1, 4%;
+    color: #252C32;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 15px;
+}
