@@ -15,8 +15,11 @@
         <form id="login-form">
             <input type="email" placeholder="Email" required>
             <input type="password" placeholder="Mật khẩu" required>
-            <input type="checkbox"><span>Nhớ tài khoản</span>
-            <button type="submit">Đăng Nhập</button>
+        <div class="checkbox">
+            <input id="rememberMe" type="checkbox">
+            <span>Nhớ tài khoản</span>
+        </div>
+        <button type="submit" id="loginButton">Đăng Nhập</button>
         </form>
         <p>Bạn chưa có tài khoản? <a href="/project_dangnhat/pages/register.html">Đăng Ký</a></p>
         <p><a href="#">Quên mật khẩu?</a></p>

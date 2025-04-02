@@ -41,6 +41,13 @@ button {
     cursor: pointer;
     width: 100%;
 }
+.checkbox{
+    display: flex;
+    align-items: center;
+    input{
+        width: 30px;
+    }
+}
 
 button:hover {
     background-color: #0056b3;
