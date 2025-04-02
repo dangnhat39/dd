@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "/project_dangnhat/pages/login.html";
     });
 });
-const modal = document.querySelector(".modal"); // Selects the modal by class  
-const openModal = document.getElementById("myModal");// Selects the button to open the modal  
+const modal = document.querySelector(".modal"); 
+const openModal = document.getElementById("myModal"); 
 const cancelButton = document.getElementById("cancelButton");
 
 
