@@ -4,60 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./test.css">
 </head>
 <body>
-    <div>
-        <div>
-            <img src="./Fire.png" alt="">
-            <img src="./Value & icon.png" alt="">
+    <div class="modal">
+        <div class="modal-content">
+            <h2 id="openModal">Thêm mới danh mục</h2>
+            <label for="maDanhMuc">Mã danh mục *</label>
+            <input type="text" id="maDanhMuc" required>
+    
+            <label for="tenDanhMuc">Tên danh mục *</label>
+            <input type="text" id="tenDanhMuc" required>
+    
+            <div class="trang-thai">
+                <label>Trạng thái</label>
+                <div>
+                    <input type="radio" id="dangHoatDong" name="trangThai" value="dangHoatDong" checked>
+                    <label for="dangHoatDong">Đang hoạt động</label>
+    
+                    <input type="radio" id="ngungHoatDong" name="trangThai" value="ngungHoatDong">
+                    <label for="ngungHoatDong">Ngừng hoạt động</label>
+                </div>
+            </div>
+    
+            <div class="modal-buttons">
+                <button onclick="cancel()">Hủy</button>
+                <button onclick="add()">Thêm</button>
+            </div>
         </div>
-        <div>
-            <img src="./Home.png" alt="">
-            <p>Thống kê</p>
-        </div>
-        <div>
-            <img src="./Cash.png" alt="">
-            <p>Danh mục</p>
-        </div>
-        <div>
-            <img src="./Cash (1).png" alt="">
-            <p>Sản phẩm</p>
-        </div>
     </div>
-    <div>
-        <img src="./Bell.png" alt="">
-        <img src="./Ellipse 6.png" alt="">
-    </div>
-    <div>
-        <h1>Danh mục</h1>
-        <button >Thêm danh mục</button>
-    </div>
-    <div>
-        <select name="" id="">
-            <option value="">Đang hoạt động</option>
-            <option value="">Ngưng hoạt động</option>
-        </select>
-    </div>
-    <div>
-        <input type="text" placeholder="Tìm kiếm danh mục theo tên">
-        <img src="./Shape.png" alt="">
-    </div>
-    <div>
-        <table>
-            <td>
-                <span>Mã danh mục <img src="./arrow-down.png" alt=""></span>
-                
-           
-        
-                <span>Tên danh mục <img src="./arrow-down.png" alt=""></span>
-
-            
-                <span>Tên danh mục <img src="./arrow-down.png" alt=""></span>
-            
-            
-                <span>Tên danh mục <img src="./arrow-down.png" alt=""></span>
-            </td>
-        </table>
-    </div>
+    <script src="./test.js"></script>
 </body>
 </html>
