@@ -4,35 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./test.css">
 </head>
 <body>
-    <div class="modal">
-        <div class="modal-content">
-            <h2 id="openModal">Thêm mới danh mục</h2>
-            <label for="maDanhMuc">Mã danh mục *</label>
-            <input type="text" id="maDanhMuc" required>
+    <div id="edit-modal" class="edit-modal">
+        <div class="modal-body">
+            <span class="close-button">&times;</span>
+            <h2>Cập nhật thông tin danh mục</h2>
+            <form>
+                <label for="categoryCode">Mã danh mục *</label>
+                <input type="text" id="categoryCode" required>
     
-            <label for="tenDanhMuc">Tên danh mục *</label>
-            <input type="text" id="tenDanhMuc" required>
+                <label for="categoryName">Tên danh mục *</label>
+                <input type="text" id="categoryName" required>
     
-            <div class="trang-thai">
                 <label>Trạng thái</label>
                 <div>
-                    <input type="radio" id="dangHoatDong" name="trangThai" value="dangHoatDong" checked>
-                    <label for="dangHoatDong">Đang hoạt động</label>
-    
-                    <input type="radio" id="ngungHoatDong" name="trangThai" value="ngungHoatDong">
-                    <label for="ngungHoatDong">Ngừng hoạt động</label>
+                    <input type="radio" id="statusActive" name="categoryStatus" value="active" checked>
+                    <label for="statusActive">Đang hoạt động</label>
+                    <input type="radio" id="statusInactive" name="categoryStatus" value="inactive">
+                    <label for="statusInactive">Ngừng hoạt động</label>
                 </div>
-            </div>
-    
-            <div class="modal-buttons">
-                <button onclick="cancel()">Hủy</button>
-                <button onclick="add()">Thêm</button>
-            </div>
+                <button type="submit" class="save-button">Lưu</button>
+                <button type="button" class="cancel-button">Hủy</button>
+            </form>
         </div>
-    </div>
-    <script src="./test.js"></script>
 </body>
 </html>

@@ -69,8 +69,8 @@
                         <td>Quần áo</td>
                         <td class="active">Đang hoạt động</td>
                         <td>
-                            <button class="edit-button">✏️</button>
                             <button class="delete">🗑️</button>
+                            <button class="edit-button">✏️</button>
                         </td>
                     </tr>
                     <tr>
@@ -78,8 +78,8 @@
                         <td>Kính mắt</td>
                         <td class="inactive">Ngừng hoạt động</td>
                         <td>
-                            <button class="edit-button">✏️</button>
                             <button class="delete">🗑️</button>
+                            <button class="edit-button">✏️</button>
                         </td>
                     </tr>
                     <tr>
@@ -87,8 +87,8 @@
                         <td>Giày dép</td>
                         <td class="active">Đang hoạt động</td>
                         <td>
-                            <button id="edit-button">✏️</button>
                             <button class="delete">🗑️</button>
+                            <button id="edit-button">✏️</button>
                         </td>
                     </tr>
                     <tr>
@@ -96,8 +96,8 @@
                         <td>Thời trang nam</td>
                         <td class="inactive">Ngừng hoạt động</td>
                         <td>
-                            <button class="edit-button">✏️</button>
                             <button class="delete">🗑️</button>
+                            <button class="edit-button">✏️</button>
                         </td>
                     </tr>
                     <tr>
@@ -105,8 +105,8 @@
                         <td>Thời trang nữ</td>
                         <td class="inactive">Ngừng hoạt động</td>
                         <td>
-                            <button class="edit-button">✏️</button>
                             <button class="delete">🗑️</button>
+                            <button class="edit-button">✏️</button>
                         </td>
                     </tr>
                     <tr>
@@ -114,8 +114,8 @@
                         <td>Hoa quả</td>
                         <td class="inactive">Ngừng hoạt động</td>
                         <td>
-                            <button class="edit-button">✏️</button>
                             <button class="delete">🗑️</button>
+                            <button class="edit-button">✏️</button>
                         </td>
                     </tr>
                     <tr>
@@ -123,8 +123,8 @@
                         <td>Rau</td>
                         <td class="active">Đang hoạt động</td>
                         <td>
-                            <button class="edit-button">✏️</button>
                             <button class="delete">🗑️</button>
+                            <button class="edit-button">✏️</button>
                         </td>
                     </tr>
                     <tr>
@@ -132,18 +132,18 @@
                         <td>Điện thoại</td>
                         <td class="inactive">Ngừng hoạt động</td>
                         <td>
-                            <button class="edit-button">✏️</button>
                             <button class="delete">🗑️</button>
+                            <button class="edit-button">✏️</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <ul class="pagination">
-                <li class="page-item"><a href="#" class="page-link">«</a></li> <!-- Nút Trang trước -->
-                <li class="page-item"><a href="#" class="page-link active">1</a></li> <!-- Trang hiện tại -->
+                <li class="page-item"><a href="#" class="page-link">«</a></li>
+                <li class="page-item"><a href="#" class="page-link active">1</a></li> 
                 <li class="page-item"><a href="#" class="page-link">2</a></li>
                 <li class="page-item"><a href="#" class="page-link">3</a></li>
-                <li class="page-item"><a href="#" class="page-link">»</a></li> <!-- Nút Trang tiếp theo -->
+                <li class="page-item"><a href="#" class="page-link">»</a></li> 
             </ul>
         </div>
     </div>
@@ -151,10 +151,10 @@
         <div class="modal-content">
             <h2 id="openModal">Thêm mới danh mục</h2>
             <label for="maDanhMuc">Mã danh mục *</label>
-            <input type="text" id="maDanhMuc" required>
+            <input type="text" id="maDanhMuc" required><br><br>
 
             <label for="tenDanhMuc">Tên danh mục *</label>
-            <input type="text" id="tenDanhMuc" required>
+            <input type="text" id="tenDanhMuc" required><br>
 
             <div class="trang-thai">
                 <label>Trạng thái</label>
@@ -169,7 +169,7 @@
 
             <div class="modal-buttons">
                 <button id="cancelButton">Hủy</button>
-                <button onclick="add()">Thêm</button>
+                <button class="save-button">thêm</button>
             </div>
         </div>
     </div>
@@ -191,9 +191,8 @@
                     <input type="radio" id="statusInactive" name="categoryStatus" value="inactive">
                     <label for="statusInactive">Ngừng hoạt động</label>
                 </div>
-
-                <button type="button" class="cancel-button">Hủy</button>
                 <button type="submit" class="save-button">Lưu</button>
+                <button type="button" class="cancel-button">Hủy</button>
             </form>
         </div>
     </div>
