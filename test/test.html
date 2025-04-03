@@ -1,32 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Slide Ảnh iPhone 14 Pro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .slide-container {
+           width: 100%;
+            margin: auto;
+        }
+
+        .carousel {
+            height: 400px;
+        }
+
+        .carousel-inner {
+            height: 100%;
+        }
+
+        .carousel-item {
+            height: 100%;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Giữ tỷ lệ ảnh, tránh méo */
+        }
+                 .content {
+             position: absolute;
+             top: 100px;
+             left: 200px;
+         }
+
+         .iphone-section {
+             background-color: #211C24;
+             color: white;
+             text-align: center;
+             padding-left: 100px;
+             width: 100%;
+             height: 400px;
+             position: relative;
+         }
+
+         .iphone-section img {
+             position: absolute;
+             width: 350px;
+             height: 400px;
+             right: 250px;
+             bottom: 0.1px;
+         }
+
+         .iphone-section h2 {
+             color: #b3b3b3;
+             font-size: 18px;
+             margin-bottom: 8px;
+         }
+
+         .iphone-section h1 {
+             font-size: 48px;
+             font-weight: bold;
+             margin-bottom: 16px;
+         }
+
+         .iphone-section p {
+             color: #b3b3b3;
+             margin-bottom: 24px;
+         }
+
+         .iphone-section button {
+             padding: 8px 24px;
+             border: 1px solid white;
+             color: white;
+             background: none;
+             border-radius: 9999px;
+             cursor: pointer;
+         }
+
+         .iphone-section button:hover {
+             background-color: white;
+             color: #1a1a1a;
+         }
+
+         /* Danh muc san pham */
+         .sanPham {
+             /* background-color: white; */
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             margin-top: 50px;
+             position: relative;
+             background-color: #FAFAFA;
+             height: 250px;
+         }
+
+         .category {
+             width: 100%;
+             max-width: 1200px;
+             margin: 0 auto;
+             padding: 0 16px;
+         }
+
+         h2 {
+             font-size: 20px;
+             font-weight: 600;
+             margin-bottom: 24px;
+         }
+
+         .categories {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+         }
+
+         .category-list {
+             display: flex;
+             gap: 70px;
+         }
+
+         .category-item {
+             width: 128px;
+             height: 128px;
+             background-color: #f3f3f3;
+             border-radius: 8px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+         }
+
+         .category-item span {
+             font-size: 16px;
+         }
+
+         .navigation {
+             display: flex;
+             position: absolute;
+             right: 222px;
+             top: 5px;
+             gap: 8px;
+         }
+
+         .navigation button {
+             background: none;
+             border: none;
+             color: #4a4a4a;
+             font-size: 20px;
+             cursor: pointer;
+         }
+
+         .navigation button:hover {
+             color: black;
+         }
+    </style>
 </head>
+
 <body>
-    <div id="edit-modal" class="edit-modal">
-        <div class="modal-body">
-            <span class="close-button">&times;</span>
-            <h2>Cập nhật thông tin danh mục</h2>
-            <form>
-                <label for="categoryCode">Mã danh mục *</label>
-                <input type="text" id="categoryCode" required>
-    
-                <label for="categoryName">Tên danh mục *</label>
-                <input type="text" id="categoryName" required>
-    
-                <label>Trạng thái</label>
-                <div>
-                    <input type="radio" id="statusActive" name="categoryStatus" value="active" checked>
-                    <label for="statusActive">Đang hoạt động</label>
-                    <input type="radio" id="statusInactive" name="categoryStatus" value="inactive">
-                    <label for="statusInactive">Ngừng hoạt động</label>
+    <div class="slide-container">
+        <div id="iphoneCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="iphone-section">
+                        <table>
+                            <tr>
+                                <td class="content">
+                                    <h2>Đột phá công nghệ</h2>
+                                    <h1>IPhone 14 <span>Pro</span></h1>
+                                    <p>Được tạo ra để thay đổi mọi thứ để tốt hơn. Cho tất cả mọi người</p>
+                                    <button>Mua ngay</button>
+                                </td>
+                                <td>
+                                    <img src="../project_dangnhat/trangchinh/img/nhathat.webp" alt="iPhone 14 Pro">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <button type="submit" class="save-button">Lưu</button>
-                <button type="button" class="cancel-button">Hủy</button>
-            </form>
+                <div class="carousel-item">
+                    <img src="../project_dangnhat/trangchinh/img/nhathat2.webp" alt="iPhone 14 Pro Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="../project_dangnhat/trangchinh/img/nhathat.webp" alt="iPhone 14 Pro Image 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#iphoneCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Trở về</span>
+            </a>
+            <a class="carousel-control-next" href="#iphoneCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Tiếp theo</span>
+            </a>
         </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
