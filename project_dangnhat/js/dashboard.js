@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const itemss = document.getElementById("category-pro");
     itemss.addEventListener("click", function (event) {
         event.preventDefault();
-        window.location.href = "/project_dangnhat/pages/login.html";
+        window.location.href = "/project_dangnhat/pages/dashboard.html";
     });
 });
 const modal = document.querySelector(".modal"); 
