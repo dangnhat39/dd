@@ -16,7 +16,7 @@
 }
 
 .sale h1 {
-    font-size: 100px;
+    font-size: 10   0px;
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -69,13 +69,6 @@
     
 }
 
-/* .image-top-left img,
-.image-bottom-left img,
-.image-top-right img,
-.image-bottom-right img {
-    width: auto;
-    height: auto;
-} */
 
 .image-top-left img {
     position: absolute;
