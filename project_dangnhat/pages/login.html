@@ -12,19 +12,28 @@
     <div class="login-container">
         <h1>Đăng nhập</h1>
         <p>Đăng nhập tài khoản để sử dụng hệ thống quản lý.</p>
+
         <form id="login-form">
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Mật khẩu" required>
-        <div class="checkbox">
-            <input id="rememberMe" type="checkbox">
-            <span>Nhớ tài khoản</span>
-        </div>
-        <button type="submit" id="loginButton">Đăng Nhập</button>
+            <input type="email" id="email" placeholder="Email" required>
+            <div id="email-error" style="color: red; font-size: 14px; margin-bottom: 10px;"></div>
+
+            <input type="password" id="password" placeholder="Mật khẩu" required>
+            <div id="password-error" style="color: red; font-size: 14px; margin-bottom: 10px;"></div>
+
+            <div class="checkbox">
+                <input id="rememberMe" type="checkbox">
+                <span>Nhớ tài khoản</span>
+                <p><a class="forgotPassWord">Quên mật khẩu?</a></p>
+
+            </div>
+
+            <button type="submit" id="loginButton">Đăng Nhập</button>
         </form>
+
         <p>Bạn chưa có tài khoản? <a href="/project_dangnhat/pages/register.html">Đăng Ký</a></p>
-        <p><a  class="forgotPassWord">Quên mật khẩu?</a></p>
     </div>
+
     <script src="../js/login.js"></script>
 </body>
-    
+
 </html>

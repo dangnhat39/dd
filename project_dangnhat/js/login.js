@@ -1,41 +1,44 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('login-form');
-    const emailInput = form.querySelector('input[type="email"]');
-    const passwordInput = form.querySelector('input[type="password"]');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
 
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Ngăn form gửi đi mặc định
+        event.preventDefault();
 
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
+        let isValid = true;
 
-        // --- Validate dữ liệu không được để trống ---
+        // Reset lỗi cũ
+        emailError.textContent = '';
+        passwordError.textContent = '';
+
         if (email === '') {
-            alert('Email không được để trống');
-            return;
+            emailError.textContent = 'Email không được để trống';
+            isValid = false;
         }
 
         if (password === '') {
-            alert('Mật khẩu không được để trống');
-            return;
+            passwordError.textContent = 'Mật khẩu không được để trống';
+            isValid = false;
         }
 
-        // --- Lấy dữ liệu tài khoản từ localStorage ---
+        if (!isValid) return;
+
         const registeredAccounts = JSON.parse(localStorage.getItem('registeredAccounts')) || [];
 
-        // --- Kiểm tra đăng nhập ---
         const matchedUser = registeredAccounts.find(user =>
             user.email === email && user.password === password
         );
 
         if (!matchedUser) {
-            alert('Cảnh báo lỗi: Email hoặc Mật khẩu không đúng');
+            passwordError.textContent = 'Cảnh báo lỗi: Email hoặc Mật khẩu không đúng';
             return;
         }
 
-        // --- Thành công: chuyển hướng Dashboard ---
-        alert('Đăng nhập thành công!');
-        window.location.href = '/project_dangnhat/pages/dashboard.html'; // chỉnh lại đường dẫn nếu cần
+        window.location.href = '/project_dangnhat/pages/dashboard.html';
     });
 });
