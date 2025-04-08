@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const registeredEmails = JSON.parse(localStorage.getItem('registeredEmails')) || [];
         if (registeredEmails.includes(emailInput.value.trim())) {
             isValid = false;
-            alert('Email này đã được đăng ký. Vui lòng sử dụng email khác.');
         }
 
         if (fullNameInput.value.trim() === '') {
@@ -71,10 +70,15 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
         } else {
             event.preventDefault();
-            registeredEmails.push(emailInput.value.trim());
-            localStorage.setItem('registeredEmails', JSON.stringify(registeredEmails));
+            const registeredAccounts = JSON.parse(localStorage.getItem('registeredAccounts')) || [];
 
-            alert('Đăng ký thành công! Bạn sẽ được chuyển hướng đến trang đăng nhập.');
+            registeredAccounts.push({
+                email: emailInput.value.trim(),
+                password: passwordInput.value
+            });
+
+            localStorage.setItem('registeredAccounts', JSON.stringify(registeredAccounts));
+
             window.location.href = '/project_dangnhat/pages/login.html?registration=success';
         }
     });

@@ -52,3 +52,14 @@ window.onclick = function (event) {
         editModal.style.display = "none";
     }
 }  
+document.addEventListener('DOMContentLoaded', function () {
+    const logoutIcon = document.getElementById('logout-icon');
+
+    logoutIcon.addEventListener('click', function () {
+        const confirmLogout = confirm("Bạn có muốn đăng xuất?");
+        if (confirmLogout) {
+            // Xoá thông tin nếu cần, ví dụ localStorage.clear();
+            window.location.href = '/project_dangnhat/pages/login.html';
+        }
+    });
+});

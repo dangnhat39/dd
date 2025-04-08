@@ -39,7 +39,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
+    width:300px;
 }
 .checkbox{
     display: flex;
