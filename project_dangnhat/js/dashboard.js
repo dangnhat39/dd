@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.getElementById("category-menu");
     items.addEventListener("click", function (event) {
@@ -54,12 +53,21 @@ window.onclick = function (event) {
 }  
 document.addEventListener('DOMContentLoaded', function () {
     const logoutIcon = document.getElementById('logout-icon');
+    const logoutButton = document.getElementById('logout-button');
+    logoutIcon.addEventListener('click', function (event) {
+        event.stopPropagation();
+        logoutButton.style.display = logoutButton.style.display === 'block' ? 'none' : 'block';
+    });
 
-    logoutIcon.addEventListener('click', function () {
-        const confirmLogout = confirm("Bạn có muốn đăng xuất?");
+    logoutButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        const confirmLogout = confirm('Bạn có chắc chắn muốn đăng xuất không?');
         if (confirmLogout) {
-            // Xoá thông tin nếu cần, ví dụ localStorage.clear();
             window.location.href = '/project_dangnhat/pages/login.html';
         }
+    });
+
+    window.addEventListener('click', function () {
+        logoutButton.style.display = 'none';
     });
 });

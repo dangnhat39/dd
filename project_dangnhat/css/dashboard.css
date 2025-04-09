@@ -3,6 +3,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
 }
+.header{
+    margin-right: 20px;
+}
 
 .sidebar {
     width: 250px;
@@ -246,6 +249,14 @@ button:hover {
 
 body {
     font-family: Arial, sans-serif;
+}
+.logout-button{
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
 }
 
 .modal-container {
