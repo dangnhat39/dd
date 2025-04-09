@@ -298,6 +298,13 @@ form {
     display: flex;
     flex-direction: column;
 }
+th.sorted-asc .sort-icon {
+    transform: rotate(180deg);
+}
+
+th.sorted-desc .sort-icon {
+    transform: rotate(0deg);
+}
 
 label {
     margin-top: 10px;
