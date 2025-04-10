@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 'DM005', name: 'Thời trang nữ', status: 'inactive' },
         { id: 'DM006', name: 'Hoa quả', status: 'inactive' },
         { id: 'DM007', name: 'Rau', status: 'active' },
-        { id: 'MD008', name: 'Điện thoại', status: 'inactive' }
+        { id: 'MD009', name: 'Điện thoại', status: 'inactive' },
     ];
 
     // Save new category
@@ -387,5 +387,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
     statusSelect.addEventListener("change", applyFilter);
 
+    // Initialize
     renderTable();
+
+    // Thêm 10 danh mục mới vào localStorage (chạy một lần)
+    const newCategoriesToAdd = [
+        { id: 'DM010', name: 'Đồ dùng cá nhân', status: 'active' },
+        { id: 'DM011', name: 'Đồ chơi trẻ em', status: 'inactive' },
+        { id: 'DM012', name: 'Sản phẩm cho mẹ và bé', status: 'active' },
+        { id: 'DM013', name: 'Chăm sóc sức khỏe', status: 'inactive' },
+        { id: 'DM014', name: 'Thiết bị gia đình', status: 'active' },
+        { id: 'DM015', name: 'Dụng cụ làm vườn', status: 'inactive' },
+        { id: 'DM016', name: 'Thức ăn cho thú cưng', status: 'active' },
+        { id: 'DM017', name: 'Đồ thủ công mỹ nghệ', status: 'active' },
+        { id: 'DM018', name: 'Vật tư nông nghiệp', status: 'active' },
+        { id: 'DM019', name: 'Linh kiện điện tử', status: 'inactive' },
+    ];
+
+    let currentCategories = JSON.parse(localStorage.getItem('categories')) || [
+        { id: 'DM001', name: 'Quần áo', status: 'active' },
+        { id: 'DM002', name: 'Kính mắt', status: 'inactive' },
+        { id: 'DM003', name: 'Giày dép', status: 'active' },
+        { id: 'DM004', name: 'Thời trang nam', status: 'inactive' },
+        { id: 'DM005', name: 'Thời trang nữ', status: 'inactive' },
+        { id: 'DM006', name: 'Hoa quả', status: 'inactive' },
+        { id: 'DM007', name: 'Rau', status: 'active' },
+        { id: 'MD008', name: 'Điện thoại', status: 'inactive' },
+    ];
+
+    // kiểm tra id đã tồn tại chưa
+    const newCategoriesToAddFiltered = newCategoriesToAdd.filter(newCat =>
+        !currentCategories.some(currentCat => currentCat.id === newCat.id)
+    );
+
+    currentCategories = currentCategories.concat(newCategoriesToAddFiltered);
+    localStorage.setItem('categories', JSON.stringify(currentCategories));
+
+    console.log('Đã thêm (nếu chưa tồn tại) 10 danh mục mới vào localStorage.');
+    console.log('Dữ liệu categories hiện tại trong localStorage:', JSON.parse(localStorage.getItem('categories')));
+
 });
