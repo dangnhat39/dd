@@ -127,6 +127,13 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Check if Name already exists
+        if (categories.some(cat => cat.name.toLowerCase() === tenDanhMuc.toLowerCase())) {
+            alert('Tên danh mục đã tồn tại');
+            return;
+        }
+
+
         const newCategory = {
             id: maDanhMuc,
             name: tenDanhMuc,
@@ -135,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         categories.push(newCategory);
         localStorage.setItem('categories', JSON.stringify(categories));
+        alert('Đã thêm danh mục thành công!');
 
         // Reset form and hide modal
         document.getElementById('maDanhMuc').value = '';
@@ -190,6 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem('categories', JSON.stringify(categories));
             editModal.style.display = 'none';
             renderTable();
+            alert('Đã cập nhật danh mục thành công!');
         }
     });
 
@@ -437,3 +446,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('Dữ liệu categories hiện tại trong localStorage:', JSON.parse(localStorage.getItem('categories')));
 
 });
+
+
+
