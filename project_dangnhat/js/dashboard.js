@@ -102,8 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 'DM005', name: 'Thời trang nữ', status: 'inactive' },
         { id: 'DM006', name: 'Hoa quả', status: 'inactive' },
         { id: 'DM007', name: 'Rau', status: 'active' },
-        { id: 'MD009', name: 'Điện thoại', status: 'inactive' },
+        { id: 'MD008', name: 'Điện thoại', status: 'inactive' },
     ];
+
+    // Product data (giả định)
+    let products = JSON.parse(localStorage.getItem('products')) || [];
 
     // Save new category
     saveButton.addEventListener('click', function (e) {
@@ -194,17 +197,24 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('click', function (e) {
         if (e.target.closest('.delete')) {
             const row = e.target.closest('tr');
-            const id = row.cells[0].textContent;
+            const categoryIdToDelete = row.cells[0].textContent;
+
+            // Kiểm tra xem có sản phẩm nào thuộc về danh mục này không
+            const hasProducts = products.some(product => product.categoryId === categoryIdToDelete);
+
+            if (hasProducts) {
+                alert('Không thể xóa danh mục này vì nó đang chứa sản phẩm.');
+                return; // Ngăn chặn việc xóa
+            }
 
             if (confirm('Bạn có chắc chắn muốn xóa danh mục này?')) {
-                categories = categories.filter(cat => cat.id !== id);
+                categories = categories.filter(cat => cat.id !== categoryIdToDelete);
                 localStorage.setItem('categories', JSON.stringify(categories));
                 renderTable();
             }
         }
     });
 
-    // Table rendering and pagination
     const rowsPerPage = 10;
     const table = document.querySelector("table tbody");
     const pagination = document.querySelector(".pagination");
