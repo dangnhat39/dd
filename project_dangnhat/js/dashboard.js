@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Navigation
     const items = document.getElementById("category-menu");
     items.addEventListener("click", function (event) {
         event.preventDefault();
@@ -10,48 +11,52 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         window.location.href = "/project_dangnhat/pages/dashboard.html";
     });
-});
-const modal = document.querySelector(".modal");
-const openModal = document.getElementById("myModal");
-const cancelButton = document.getElementById("cancelButton");
 
+    // Modal functionality
+    const modal = document.querySelector(".modal");
+    const openModal = document.getElementById("myModal");
+    const cancelButton = document.getElementById("cancelButton");
+    const saveButton = document.querySelector(".save-button");
 
-openModal.addEventListener("click", function () {
-    modal.style.display = "flex";
-});
+    openModal.addEventListener("click", function () {
+        modal.style.display = "flex";
+    });
 
-cancelButton.addEventListener("click", function () {
-    modal.style.display = "none";
-});
-
-
-window.onclick = function (event) {
-    if (event.target === modal) {
+    cancelButton.addEventListener("click", function () {
         modal.style.display = "none";
-    }
-}
-const editModal = document.querySelector(".edit-modal");
-const openEditModals = document.getElementsByClassName("edit-button");
-const cancelButtonEditModal = document.getElementsByClassName("cancel-button");
-
-for (let i = 0; i < openEditModals.length; i++) {
-    openEditModals[i].addEventListener("click", function () {
-        editModal.style.display = "flex";
     });
-}
 
-for (let i = 0; i < cancelButtonEditModal.length; i++) {
-    cancelButtonEditModal[i].addEventListener("click", function () {
-        editModal.style.display = "none";
-    });
-}
-
-window.onclick = function (event) {
-    if (event.target === editModal) {
-        editModal.style.display = "none";
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
     }
-}
-document.addEventListener('DOMContentLoaded', function () {
+
+    // Edit modal functionality
+    const editModal = document.querySelector(".edit-modal");
+    const openEditModals = document.getElementsByClassName("edit-button");
+    const cancelButtonEditModal = document.getElementsByClassName("cancel-button");
+    const editSaveButton = document.querySelector("#edit-modal .save-button");
+
+    for (let i = 0; i < openEditModals.length; i++) {
+        openEditModals[i].addEventListener("click", function () {
+            editModal.style.display = "flex";
+        });
+    }
+
+    for (let i = 0; i < cancelButtonEditModal.length; i++) {
+        cancelButtonEditModal[i].addEventListener("click", function () {
+            editModal.style.display = "none";
+        });
+    }
+
+    window.onclick = function (event) {
+        if (event.target === editModal) {
+            editModal.style.display = "none";
+        }
+    }
+
+    // Logout functionality
     const logoutIcon = document.getElementById('logout-icon');
     const logoutButton = document.getElementById('logout-button');
     logoutIcon.addEventListener('click', function (event) {
@@ -70,34 +75,185 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('click', function () {
         logoutButton.style.display = 'none';
     });
-});
-document.getElementById("search-name").addEventListener("input", function () {
-    const keyword = this.value.toLowerCase();
-    const rows = document.querySelectorAll("tbody tr");
 
-    rows.forEach(row => {
-        const maDanhMuc = row.cells[0].textContent.toLowerCase();
-        const tenDanhMuc = row.cells[1].textContent.toLowerCase();
+    // Search functionality
+    document.getElementById("search-name").addEventListener("input", function () {
+        const keyword = this.value.toLowerCase();
+        const rows = document.querySelectorAll("tbody tr");
 
-        if (maDanhMuc.includes(keyword) || tenDanhMuc.includes(keyword)) {
-            row.style.display = "";
-        } else {
-            row.style.display = "none";
+        rows.forEach(row => {
+            const maDanhMuc = row.cells[0].textContent.toLowerCase();
+            const tenDanhMuc = row.cells[1].textContent.toLowerCase();
+
+            if (maDanhMuc.includes(keyword) || tenDanhMuc.includes(keyword)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    });
+
+    // Category data management
+    let categories = JSON.parse(localStorage.getItem('categories')) || [
+        { id: 'DM001', name: 'Quần áo', status: 'active' },
+        { id: 'DM002', name: 'Kính mắt', status: 'inactive' },
+        { id: 'DM003', name: 'Giày dép', status: 'active' },
+        { id: 'DM004', name: 'Thời trang nam', status: 'inactive' },
+        { id: 'DM005', name: 'Thời trang nữ', status: 'inactive' },
+        { id: 'DM006', name: 'Hoa quả', status: 'inactive' },
+        { id: 'DM007', name: 'Rau', status: 'active' },
+        { id: 'MD008', name: 'Điện thoại', status: 'inactive' }
+    ];
+
+    // Save new category
+    saveButton.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const maDanhMuc = document.getElementById('maDanhMuc').value;
+        const tenDanhMuc = document.getElementById('tenDanhMuc').value;
+        const trangThai = document.querySelector('input[name="trangThai"]:checked').value === 'dangHoatDong' ? 'active' : 'inactive';
+
+        if (!maDanhMuc || !tenDanhMuc) {
+            alert('Vui lòng điền đầy đủ thông tin');
+            return;
+        }
+
+        // Check if ID already exists
+        if (categories.some(cat => cat.id === maDanhMuc)) {
+            alert('Mã danh mục đã tồn tại');
+            return;
+        }
+
+        const newCategory = {
+            id: maDanhMuc,
+            name: tenDanhMuc,
+            status: trangThai
+        };
+
+        categories.push(newCategory);
+        localStorage.setItem('categories', JSON.stringify(categories));
+
+        // Reset form and hide modal
+        document.getElementById('maDanhMuc').value = '';
+        document.getElementById('tenDanhMuc').value = '';
+        document.getElementById('dangHoatDong').checked = true;
+        modal.style.display = 'none';
+
+        // Refresh table
+        renderTable();
+    });
+
+    // Edit category
+    let currentEditIndex = -1;
+
+    // Add event listeners to edit buttons
+    document.addEventListener('click', function (e) {
+        if (e.target.closest('.edit-button')) {
+            const row = e.target.closest('tr');
+            const id = row.cells[0].textContent;
+            currentEditIndex = categories.findIndex(cat => cat.id === id);
+
+            if (currentEditIndex !== -1) {
+                const category = categories[currentEditIndex];
+                document.getElementById('categoryCode').value = category.id;
+                document.getElementById('categoryName').value = category.name;
+
+                if (category.status === 'active') {
+                    document.getElementById('statusActive').checked = true;
+                } else {
+                    document.getElementById('statusInactive').checked = true;
+                }
+
+                editModal.style.display = 'flex';
+            }
         }
     });
-});
-//sắp xếp trang
-document.addEventListener("DOMContentLoaded", function () {
+
+    // Save edited category
+    editSaveButton.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const id = document.getElementById('categoryCode').value;
+        const name = document.getElementById('categoryName').value;
+        const status = document.querySelector('input[name="categoryStatus"]:checked').value;
+
+        if (currentEditIndex !== -1) {
+            categories[currentEditIndex] = {
+                id: id,
+                name: name,
+                status: status
+            };
+
+            localStorage.setItem('categories', JSON.stringify(categories));
+            editModal.style.display = 'none';
+            renderTable();
+        }
+    });
+
+    // Delete category
+    document.addEventListener('click', function (e) {
+        if (e.target.closest('.delete')) {
+            const row = e.target.closest('tr');
+            const id = row.cells[0].textContent;
+
+            if (confirm('Bạn có chắc chắn muốn xóa danh mục này?')) {
+                categories = categories.filter(cat => cat.id !== id);
+                localStorage.setItem('categories', JSON.stringify(categories));
+                renderTable();
+            }
+        }
+    });
+
+    // Table rendering and pagination
     const rowsPerPage = 10;
     const table = document.querySelector("table tbody");
-    const allRows = Array.from(table.querySelectorAll("tr"));
     const pagination = document.querySelector(".pagination");
     const statusSelect = document.getElementById("status");
     const sortableHeaders = document.querySelectorAll("th[data-sort]");
 
     let currentPage = 1;
-    let filteredRows = [...allRows];
+    let filteredRows = [];
     let currentSort = { key: null, asc: true };
+
+    function renderTable() {
+        table.innerHTML = '';
+
+        filteredRows = categories.map(category => {
+            const row = document.createElement('tr');
+
+            const idCell = document.createElement('td');
+            idCell.textContent = category.id;
+
+            const nameCell = document.createElement('td');
+            nameCell.textContent = category.name;
+
+            const statusCell = document.createElement('td');
+            statusCell.textContent = category.status === 'active' ? 'Đang hoạt động' : 'Ngừng hoạt động';
+            statusCell.className = category.status;
+
+            const actionCell = document.createElement('td');
+
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'delete';
+            deleteButton.innerHTML = '<img src="../assets/icons/Button.jpg" alt="">';
+
+            const editButton = document.createElement('button');
+            editButton.className = 'edit-button';
+            editButton.innerHTML = '<img src="../assets/icons/_Button base.png" alt="">';
+
+            actionCell.appendChild(deleteButton);
+            actionCell.appendChild(editButton);
+
+            row.appendChild(idCell);
+            row.appendChild(nameCell);
+            row.appendChild(statusCell);
+            row.appendChild(actionCell);
+
+            return row;
+        });
+
+        applyFilter();
+    }
 
     function displayRows(page) {
         table.innerHTML = "";
@@ -151,17 +307,47 @@ document.addEventListener("DOMContentLoaded", function () {
     function applyFilter() {
         const selected = statusSelect.value;
 
-        filteredRows = allRows.filter(row => {
-            const statusCell = row.cells[2];
-            const isActive = statusCell.classList.contains("active");
-            const isInactive = statusCell.classList.contains("inactive");
+        filteredRows = categories
+            .filter(category => {
+                return (
+                    selected === "all" ||
+                    (selected === "active" && category.status === "active") ||
+                    (selected === "inactive" && category.status === "inactive")
+                );
+            })
+            .map(category => {
+                const row = document.createElement('tr');
 
-            return (
-                selected === "all" ||
-                (selected === "active" && isActive) ||
-                (selected === "inactive" && isInactive)
-            );
-        });
+                const idCell = document.createElement('td');
+                idCell.textContent = category.id;
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = category.name;
+
+                const statusCell = document.createElement('td');
+                statusCell.textContent = category.status === 'active' ? 'Đang hoạt động' : 'Ngừng hoạt động';
+                statusCell.className = category.status;
+
+                const actionCell = document.createElement('td');
+
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'delete';
+                deleteButton.innerHTML = '<img src="../assets/icons/Button.jpg" alt="">';
+
+                const editButton = document.createElement('button');
+                editButton.className = 'edit-button';
+                editButton.innerHTML = '<img src="../assets/icons/_Button base.png" alt="">';
+
+                actionCell.appendChild(deleteButton);
+                actionCell.appendChild(editButton);
+
+                row.appendChild(idCell);
+                row.appendChild(nameCell);
+                row.appendChild(statusCell);
+                row.appendChild(actionCell);
+
+                return row;
+            });
 
         if (currentSort.key !== null) {
             sortRows(currentSort.key, currentSort.asc);
@@ -194,7 +380,6 @@ document.addEventListener("DOMContentLoaded", function () {
             displayRows(currentPage);
             updatePagination();
 
-            // Cập nhật icon (tuỳ chỉnh nếu bạn muốn đổi mũi tên)
             sortableHeaders.forEach(h => h.classList.remove("sorted-asc", "sorted-desc"));
             th.classList.add(asc ? "sorted-asc" : "sorted-desc");
         });
@@ -202,10 +387,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     statusSelect.addEventListener("change", applyFilter);
 
-    applyFilter();
+    renderTable();
 });
-
-//sắp xếp danh mục
-
-
-
