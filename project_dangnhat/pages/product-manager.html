@@ -4,102 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/product-manager.css">
 </head>
 <body>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Mã danh mục</th>
-                    <th>Tên danh mục</th>
-                    <th>Trạng thái</th>
-                    <th>Chức năng</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>DM001</td>
-                    <td>Quần áo</td>
-                    <td class="active">Đang hoạt động</td>
-                    <td>
-                        <button class="delete"><img src="../assets/icons/Button.jpg" alt=""></button>
-                        <button class="edit-button"><img src="../assets/icons/_Button base.png" alt=""></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>DM002</td>
-                    <td>Kính mắt</td>
-                    <td class="inactive">Ngừng hoạt động</td>
-                    <td>
-                        <button class="delete"><img src="../assets/icons/Button.jpg" alt=""></button>
-                        <button class="edit-button"><img src="../assets/icons/_Button base.png" alt=""></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>DM003</td>
-                    <td>Giày dép</td>
-                    <td class="active">Đang hoạt động</td>
-                    <td>
-                        <button class="delete"><img src="../assets/icons/Button.jpg" alt=""></button>
-                        <button class="edit-button"><img src="../assets/icons/_Button base.png" alt=""></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>DM004</td>
-                    <td>Thời trang nam</td>
-                    <td class="inactive">Ngừng hoạt động</td>
-                    <td>
-                        <button class="delete"><img src="../assets/icons/Button.jpg" alt=""></button>
-                        <button class="edit-button"><img src="../assets/icons/_Button base.png" alt=""></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>DM005</td>
-                    <td>Thời trang nữ</td>
-                    <td class="inactive">Ngừng hoạt động</td>
-                    <td>
-                        <button class="delete"><img src="../assets/icons/Button.jpg" alt=""></button>
-                        <button class="edit-button"><img src="../assets/icons/_Button base.png" alt=""></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>DM006</td>
-                    <td>Hoa quả</td>
-                    <td class="inactive">Ngừng hoạt động</td>
-                    <td>
-                        <button class="delete"><img src="../assets/icons/Button.jpg" alt=""></button>
-                        <button class="edit-button"><img src="../assets/icons/_Button base.png" alt=""></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>DM007</td>
-                    <td>Rau</td>
-                    <td class="active">Đang hoạt động</td>
-                    <td>
-                        <button class="delete"><img src="../assets/icons/Button.jpg" alt=""></button>
-                        <button class="edit-button"><img src="../assets/icons/_Button base.png" alt=""></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>MD008</td>
-                    <td>Điện thoại</td>
-                    <td class="inactive">Ngừng hoạt động</td>
-                    <td>
-                        <button class="delete"><img src="../assets/icons/Button.jpg" alt=""></button>
-                        <button class="edit-button"><img src="../assets/icons/_Button base.png" alt=""></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <ul class="pagination">
-            <li class="page-item"><a href="#" class="page-link">«</a></li>
-            <li class="page-item"><a href="#" class="page-link active">1</a></li>
-            <li class="page-item"><a href="#" class="page-link">2</a></li>
-            <li class="page-item"><a href="#" class="page-link">3</a></li>
-            <li class="page-item"><a href="#" class="page-link">»</a></li>
-        </ul>
-    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/dashboard.css">
+    </head>
+    
+    <body>
+        <div class="sidebar">
+            <div class="logo-section">
+                <img src="../assets/icons/fire.png" alt="Logo" class="logo">
+                <h1 class="ecom">Ecommerce</h1>
+            </div>
+            <nav>
+                <div class="menu-item" id="">
+                    <img src="../assets/icons/Home.png" alt="Home Icon">
+                    <p>Thống kê</p>
+                </div>
+                <div class="menu-item" id="category-menu">
+                    <img src="../assets/icons/Cash.png" alt="Category Icon">
+                    <p>Danh mục</p>
+                </div>
+                <div class="menu-item" id="category-pro">
+                    <img src="../assets/icons/Cash (1).png" alt="Product Icon">
+                    <p>Sản phẩm</p>
+                </div>
+            </nav>
+        </div>
+    
+        <div class="header">
+            <img src="../assets/icons/Bell.png" alt="Notifications" class="icon">
+            <img id="logout-icon" src="../assets/icons/Ellipse 6.png" alt="User Profile" class="icon">
+            <button id="logout-button" style="display: none; position: absolute;">Đăng Xuất</button>
+        </div>
+    
+        <div class="content">
+            <div class="title">
+                <h1 class="category">Danh mục</h1>
+                <button class="add-category" id="myModal">Thêm danh mục</button>
+            </div>
+            <div class="controls">
+                <select id="status">
+                    <option value="all">Tất cả</option>
+                    <option value="active">Đang hoạt động</option>
+                    <option value="inactive">Ngừng hoạt động</option>
+                </select>
+    
+                <div class="search-categories">
+                    <div class="input-container">
+                        <input id="search-name" type="text" placeholder="Tìm kiếm danh mục theo tên">
+                        <img src="../assets/icons/Shape.png" alt="Search Icon" class="search-icon">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-sort="0">Mã sảm phẩm <img class="sort-icon" src="../assets/icons/arrow-down.png"></th>
+                            <th data-sort="1">Tên sản phậm <img class="sort-icon" src="../assets/icons/arrow-down.png"></th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Giảm giá</th>
+                            <th>Trạng thái</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                </ul>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modal-content">
+                <h2 id="openModal">Thêm mới danh mục</h2>
+                <label for="maDanhMuc">Mã danh mục *</label>
+                <input type="text" id="maDanhMuc" required><br><br>
+    
+                <label for="tenDanhMuc">Tên danh mục *</label>
+                <input type="text" id="tenDanhMuc" required><br>
+    
+                <div class="trang-thai">
+                    <label>Trạng thái</label>
+                    <div>
+                        <input type="radio" id="dangHoatDong" name="trangThai" value="active" checked>
+                        <label for="dangHoatDong">Đang hoạt động</label>
+    
+                        <input type="radio" id="ngungHoatDong" name="trangThai" value="inactive">
+                        <label for="ngungHoatDong">Ngừng hoạt động</label>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button id="cancelButton">Hủy</button>
+                    <button class="save-button">Thêm</button>
+                </div>
+            </div>
+        </div>
+        <div id="edit-modal" class="edit-modal">
+            <div class="modal-body">
+                <span class="close-button">&times;</span>
+                <h2>Cập nhật thông tin danh mục</h2>
+                <form>
+                    <label for="categoryCode">Mã danh mục </label>
+                    <input type="text" id="categoryCode" required>
+    
+                    <label for="categoryName">Tên danh mục </label>
+                    <input type="text" id="categoryName" required>
+    
+                    <label>Trạng thái</label>
+                    <div>
+                        <input type="radio" id="statusActive" name="categoryStatus" value="active" checked>
+                        <label for="statusActive">Đang hoạt động</label>
+                        <input type="radio" id="statusInactive" name="categoryStatus" value="inactive">
+                        <label for="statusInactive">Ngừng hoạt động</label>
+                    </div>
+                    <button type="submit" class="save-button">Lưu</button>
+                    <button type="button" class="cancel-button">Hủy</button>
+                </form>
+            </div>
+        </div>
+    
+        <script src="../js/dashboard.js"></script>
+    </body>
+    
+    </html>
     <script src="../js/product-manager.js"></script>
 </body>
 </html>
