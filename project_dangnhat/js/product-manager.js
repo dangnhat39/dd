@@ -205,3 +205,14 @@ function filterProducts() {
 categoryFilter.addEventListener('change', filterProducts);
 statusFilter.addEventListener('change', filterProducts);
 searchInput.addEventListener('input', filterProducts);
+document.addEventListener('DOMContentLoaded', function () {
+    const logoSection = document.querySelector('.logo-section');
+
+    if (logoSection) {
+        logoSection.addEventListener('click', function () {
+            window.location.href = 'category-manager.html';
+        });
+    } else {
+        console.error('Không tìm thấy phần tử có class "logo-section".');
+    }
+});

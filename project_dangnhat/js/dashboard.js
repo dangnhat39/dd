@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const logoSection = document.querySelector('.logo-section');
+
+    if (logoSection) {
+        logoSection.addEventListener('click', function () {
+            window.location.href = 'category-manager.html';
+        });
+    } else {
+        console.error('Không tìm thấy phần tử có class "logo-section".');
+    }
+});
 document.addEventListener("DOMContentLoaded", function () {
     // Navigation
     const items = document.getElementById("category-menu");
