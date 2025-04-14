@@ -1,3 +1,6 @@
+document.getElementById("go-to-dashboard").addEventListener("click", function () {
+    window.location.href = "/Project_DangNhat/pages/dashboard.html";
+});
 
 const addProductBtn = document.querySelector('.add-product');
 const addProductModal = document.getElementById('add-product-modal');
