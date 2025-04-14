@@ -1,4 +1,5 @@
-.saleBody {
+/* sale.css */
+.sale-body {
     font-family: 'Roboto', sans-serif;
     background-color: #1f2937;
     color: white;
@@ -12,23 +13,23 @@
     position: relative;
 }
 
-.sale {
+.sale-content {
     text-align: center;
 }
 
-.sale h1 {
-    font-size: 10 0px;
+.sale-content h1 {
+    font-size: 100px;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
-.sale p {
+.sale-content p {
     font-size: 1.125rem;
     color: #9ca3af;
     margin-bottom: 1.5rem;
 }
 
-.sale button {
+.sale-content button {
     padding: 0.75rem 1.5rem;
     border: 1px solid white;
     border-radius: 6px;
@@ -38,57 +39,53 @@
     cursor: pointer;
 }
 
-.image-top {
+.top-image {
     position: absolute;
     top: -0.1px;
     left: 240px;
-
-
 }
 
-.image-top-left {
+.top-left-image {
     position: absolute;
     top: -1px;
     left: 1px;
 }
 
-.image-bottom-left {
+.bottom-left-image {
     position: absolute;
     bottom: 300px;
     left: 1px;
 }
 
-.image-top-right {
+.top-right-image {
     position: absolute;
     top: 10px;
     right: 144px;
 }
 
-.image-bottom-right {
+.bottom-right-image {
     position: absolute;
     right: 150px;
-
 }
 
-
-.image-top-left img {
+.top-left-image img {
     position: absolute;
     width: 18rem;
     top: 1px;
     width: 18rem;
 }
 
-.image-bottom-left img {
+.bottom-left-image img {
     position: absolute;
     width: 18rem;
 }
 
-.image-top-right img {
+.top-right-image img {
     position: absolute;
     width: 9rem;
 }
 
-.image-bottom-right img {
+.bottom-right-image img {
     position: absolute;
     left: -248px;
 }

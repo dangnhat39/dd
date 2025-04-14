@@ -44,9 +44,6 @@ button {
 .checkbox{
     display: flex;
     align-items: center;
-    input{
-        width: 30px;
-    }
 }
 
 

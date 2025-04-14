@@ -1,142 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="../css/product-manager.css">
 </head>
+
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="../css/dashboard.css">
-    </head>
-    
-    <body>
-        <div class="sidebar">
-            <div class="logo-section">
-                <img src="../assets/icons/fire.png" alt="Logo" class="logo">
-                <h1 class="ecom">Ecommerce</h1>
-            </div>
-            <nav>
-                <div class="menu-item" id="">
-                    <img src="../assets/icons/Home.png" alt="Home Icon">
-                    <p>Thống kê</p>
-                </div>
-                <div class="menu-item" id="category-menu">
-                    <img src="../assets/icons/Cash.png" alt="Category Icon">
-                    <p>Danh mục</p>
-                </div>
-                <div class="menu-item" id="category-pro">
-                    <img src="../assets/icons/Cash (1).png" alt="Product Icon">
-                    <p>Sản phẩm</p>
-                </div>
-            </nav>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-section">
+            <img src="../assets/icons/fire.png" alt="Logo" class="logo">
+            <h1 class="ecom">Ecommerce</h1>
         </div>
-    
-        <div class="header">
-            <img src="../assets/icons/Bell.png" alt="Notifications" class="icon">
-            <img id="logout-icon" src="../assets/icons/Ellipse 6.png" alt="User Profile" class="icon">
-            <button id="logout-button" style="display: none; position: absolute;">Đăng Xuất</button>
+        <nav>
+            <div class="menu-item">
+                <img src="../assets/icons/Home.png" alt="Home Icon">
+                <p>Thống kê</p>
+            </div>
+            <div class="menu-item">
+                <img src="../assets/icons/Cash.png" alt="Category Icon">
+                <p>Danh mục</p>
+            </div>
+            <div class="menu-item active">
+                <img src="../assets/icons/Cash (1).png" alt="Product Icon">
+                <p>Sản Phẩm</p>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="../assets/icons/Bell.png" alt="Notifications" class="icon">
+        <img src="../assets/icons/Ellipse 6.png" alt="User Profile" class="icon">
+       
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="title">
+            <h1 class="category">Sản Phẩm</h1>
+            <button class="add-product">Thêm mới sản phẩm</button>
         </div>
-    
-        <div class="content">
-            <div class="title">
-                <h1 class="category">Danh mục</h1>
-                <button class="add-category" id="myModal">Thêm danh mục</button>
-            </div>
-            <div class="controls">
-                <select id="status">
-                    <option value="all">Tất cả</option>
-                    <option value="active">Đang hoạt động</option>
-                    <option value="inactive">Ngừng hoạt động</option>
-                </select>
-    
-                <div class="search-categories">
-                    <div class="input-container">
-                        <input id="search-name" type="text" placeholder="Tìm kiếm danh mục theo tên">
-                        <img src="../assets/icons/Shape.png" alt="Search Icon" class="search-icon">
-                    </div>
+
+        <!-- Filters -->
+        <div class="controls">
+            <select id="category-filter">
+                <option value="">Lọc theo danh mục</option>
+                <option value="phone">Điện thoại</option>
+                <option value="laptop">Laptop</option>
+            </select>
+            <select id="status-filter">
+                <option value="">Lọc theo trạng thái</option>
+                <option value="active">Đang hoạt động</option>
+                <option value="inactive">Ngừng hoạt động</option>
+            </select>
+            <div class="search-products">
+                <div class="input-container">
+                    <input id="search-name" type="text" placeholder="Tìm kiếm sản phẩm theo tên">
+                    <img src="../assets/icons/Shape.png" alt="Search Icon" class="search-icon">
                 </div>
-            </div>
-    
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th data-sort="0">Mã sảm phẩm <img class="sort-icon" src="../assets/icons/arrow-down.png"></th>
-                            <th data-sort="1">Tên sản phậm <img class="sort-icon" src="../assets/icons/arrow-down.png"></th>
-                            <th>Giá</th>
-                            <th>Số lượng</th>
-                            <th>Giảm giá</th>
-                            <th>Trạng thái</th>
-                            <th>Chức năng</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-                <ul class="pagination">
-                </ul>
             </div>
         </div>
-        <div class="modal">
-            <div class="modal-content">
-                <h2 id="openModal">Thêm mới danh mục</h2>
-                <label for="maDanhMuc">Mã danh mục *</label>
-                <input type="text" id="maDanhMuc" required><br><br>
-    
-                <label for="tenDanhMuc">Tên danh mục *</label>
-                <input type="text" id="tenDanhMuc" required><br>
-    
-                <div class="trang-thai">
-                    <label>Trạng thái</label>
-                    <div>
-                        <input type="radio" id="dangHoatDong" name="trangThai" value="active" checked>
-                        <label for="dangHoatDong">Đang hoạt động</label>
-    
-                        <input type="radio" id="ngungHoatDong" name="trangThai" value="inactive">
-                        <label for="ngungHoatDong">Ngừng hoạt động</label>
-                    </div>
+
+        <!-- Product Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã sản phẩm</th>
+                        <th>Tên sản phẩm <img class="sort-icon" src="../assets/icons/arrow-down.png"></th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Giảm giá</th>
+                        <th>Trạng thái</th>
+                        <th>Chức năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SP001</td>
+                        <td>iPhone 12 Pro</td>
+                        <td>12.000.000 đ</td>
+                        <td>10</td>
+                        <td>0%</td>
+                        <td><span class="active">Đang hoạt động</span></td>
+                        <td>
+                            <button><img src="../assets/icons/trash-2.png" alt="Delete"></button>
+                            <button><img src="../assets/icons/Icon.png" alt="Edit"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SP002</td>
+                        <td>Samsung Galaxy X20</td>
+                        <td>21.000.000 đ</td>
+                        <td>100</td>
+                        <td>5%</td>
+                        <td><span class="inactive">Ngừng hoạt động</span></td>
+                        <td>
+                            <button><img src="../assets/icons/trash-2.png" alt="Delete"></button>
+                            <button><img src="../assets/icons/Icon.png" alt="Edit"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SP003</td>
+                        <td>iPhone 8 Plus</td>
+                        <td>5.000.000 đ</td>
+                        <td>10</td>
+                        <td>0%</td>
+                        <td><span class="active">Đang hoạt động</span></td>
+                        <td>
+                            <button><img src="../assets/icons/trash-2.png" alt="Delete"></button>
+                            <button><img src="../assets/icons/Icon.png" alt="Edit"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SP004</td>
+                        <td>iPhone 14 Pro max</td>
+                        <td>25.000.000 đ</td>
+                        <td>20</td>
+                        <td>2%</td>
+                        <td><span class="inactive">Ngừng hoạt động</span></td>
+                        <td>
+                            <button><img src="../assets/icons/trash-2.png" alt="Delete"></button>
+                            <button><img src="../assets/icons/Icon.png" alt="Edit"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SP005</td>
+                        <td>Oppo X3</td>
+                        <td>2.000.000 đ</td>
+                        <td>10</td>
+                        <td>5%</td>
+                        <td><span class="inactive">Ngừng hoạt động</span></td>
+                        <td>
+                            <button><img src="../assets/icons/trash-2.png" alt="Delete"></button>
+                            <button><img src="../assets/icons/Icon.png" alt="Edit"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SP006</td>
+                        <td>iPhone 16</td>
+                        <td>20.000.000 đ</td>
+                        <td>20</td>
+                        <td>3%</td>
+                        <td><span class="inactive">Ngừng hoạt động</span></td>
+                        <td>
+                            <button><img src="../assets/icons/trash-2.png" alt="Delete"></button>
+                            <button><img src="../assets/icons/Icon.png" alt="Edit"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SP007</td>
+                        <td>iPhone 7 Plus</td>
+                        <td>4.000.000 đ</td>
+                        <td>10</td>
+                        <td>4%</td>
+                        <td><span class="active">Đang hoạt động</span></td>
+                        <td>
+                            <button><img src="../assets/icons/trash-2.png" alt="Delete"></button>
+                            <button><img src="../assets/icons/Icon.png" alt="Edit"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SP008</td>
+                        <td>Samsung S20 Ultra</td>
+                        <td>30.000.000 đ</td>
+                        <td>15</td>
+                        <td>2%</td>
+                        <td><span class="inactive">Ngừng hoạt động</span></td>
+                        <td>
+                            <button><img src="../assets/icons/trash-2.png" alt="Delete"></button>
+                            <button><img src="../assets/icons/Icon.png" alt="Edit"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">«</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                <li class="page-item"><a class="page-link" href="#">...</a></li>
+                <li class="page-item"><a class="page-link" href="#">20</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">»</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div class="modal" id="add-product-modal">
+        <div class="modal-content">
+            <h2>Thêm mới sản phẩm</h2>
+            <label for="maSanPham">Mã sản phẩm *</label>
+            <input type="text" id="maSanPham" required>
+
+            <label for="tenSanPham">Tên sản phẩm *</label>
+            <input type="text" id="tenSanPham" required>
+
+            <label for="giaSanPham">Giá *</label>
+            <input type="number" id="giaSanPham" required>
+
+            <label for="soLuong">Số lượng *</label>
+            <input type="number" id="soLuong" required>
+
+            <label for="giamGia">Giảm giá (%)</label>
+            <input type="number" id="giamGia" value="0">
+
+            <div class="trang-thai">
+                <label>Trạng thái</label>
+                <div>
+                    <input type="radio" id="dangHoatDong" name="trangThai" value="active" checked>
+                    <label for="dangHoatDong">Đang hoạt động</label>
+                    <input type="radio" id="ngungHoatDong" name="trangThai" value="inactive">
+                    <label for="ngungHoatDong">Ngừng hoạt động</label>
                 </div>
+            </div>
+
+            <div class="modal-buttons">
+                <button id="cancel-add">Hủy</button>
+                <button class="save-button">Thêm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div class="edit-modal" id="edit-product-modal">
+        <div class="modal-body">
+            <span class="close-button">×</span>
+            <h2>Cập nhật sản phẩm</h2>
+            <form>
+                <label for="editMaSanPham">Mã sản phẩm</label>
+                <input type="text" id="editMaSanPham" required>
+
+                <label for="editTenSanPham">Tên sản phẩm</label>
+                <input type="text" id="editTenSanPham" required>
+
+                <label for="editGiaSanPham">Giá</label>
+                <input type="number" id="editGiaSanPham" required>
+
+                <label for="editSoLuong">Số lượng</label>
+                <input type="number" id="editSoLuong" required>
+
+                <label for="editGiamGia">Giảm giá (%)</label>
+                <input type="number" id="editGiamGia" required>
+
+                <label>Trạng thái</label>
+                <div>
+                    <input type="radio" id="editDangHoatDong" name="editTrangThai" value="active" checked>
+                    <label for="editDangHoatDong">Đang hoạt động</label>
+                    <input type="radio" id="editNgungHoatDong" name="editTrangThai" value="inactive">
+                    <label for="editNgungHoatDong">Ngừng hoạt động</label>
+                </div>
+
                 <div class="modal-buttons">
-                    <button id="cancelButton">Hủy</button>
-                    <button class="save-button">Thêm</button>
-                </div>
-            </div>
-        </div>
-        <div id="edit-modal" class="edit-modal">
-            <div class="modal-body">
-                <span class="close-button">&times;</span>
-                <h2>Cập nhật thông tin danh mục</h2>
-                <form>
-                    <label for="categoryCode">Mã danh mục </label>
-                    <input type="text" id="categoryCode" required>
-    
-                    <label for="categoryName">Tên danh mục </label>
-                    <input type="text" id="categoryName" required>
-    
-                    <label>Trạng thái</label>
-                    <div>
-                        <input type="radio" id="statusActive" name="categoryStatus" value="active" checked>
-                        <label for="statusActive">Đang hoạt động</label>
-                        <input type="radio" id="statusInactive" name="categoryStatus" value="inactive">
-                        <label for="statusInactive">Ngừng hoạt động</label>
-                    </div>
-                    <button type="submit" class="save-button">Lưu</button>
                     <button type="button" class="cancel-button">Hủy</button>
-                </form>
-            </div>
+                    <button type="submit" class="save-button">Lưu</button>
+                </div>
+            </form>
         </div>
-    
-        <script src="../js/dashboard.js"></script>
-    </body>
-    
-    </html>
+    </div>
+
     <script src="../js/product-manager.js"></script>
 </body>
+
 </html>
