@@ -18,23 +18,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (fullNameInput.value.trim() === '') {
             isValid = false;
-            alert('Họ và tên đệm không được để trống.');
         }
 
         if (firstNameInput.value.trim() === '') {
             isValid = false;
-            alert('Tên không được để trống.');
         }
 
         if (emailInput.value.trim() === '') {
             isValid = false;
-            alert('Email không được để trống.');
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(emailInput.value)) {
             isValid = false;
-            alert('Email không đúng định dạng.');
         }
 
         if (passwordInput.value === '') {
@@ -63,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!agreeCheckbox.checked) {
             isValid = false;
-            alert('Bạn cần đồng ý với chính sách và điều khoản.');
         }
 
         if (!isValid) {

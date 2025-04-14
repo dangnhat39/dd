@@ -597,13 +597,7 @@ footer {
 
 }
 
-/* .image-top-left img,
-.image-bottom-left img,
-.image-top-right img,
-.image-bottom-right img {
-    width: auto;
-    height: auto;
-} */
+
 
 .image-top-left img {
     position: absolute;
